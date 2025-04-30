@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme
+{
+    /* Fonts */
+    --font-family: 'Gabarito', sans-serif;
+
+
+    /* COLORS */
+
+    /* Background Colors */
+    --mobile-menu-background-color: linear-gradient(167.99deg, rgba(239, 239, 239, 0.2) 0%, rgba(239, 239, 239, 0.2) 100%);
+
+    /* Text Colors */
+    --primary-text-color: #fff;
+    --secondary-text-color: #f5c068;
+    --page-headings-text-color: #b82024;
+
+
+    /* FONT SIZES */
+    --heading-one-font-size: clamp(1.25rem, 2.3759rem + -1.4528vw, 2rem);
+    --heading-two-font-size: clamp(1.25rem, 1.6253rem + -0.4843vw, 1.5rem);
+    --heading-three-font-size: clamp(1.125rem, 1.0623rem + 0.2421vw, 1.25rem);
+    --heading-four-font-size: clamp(1rem, 0.8747rem + 0.4843vw, 1.25rem);
+    --heading-five-font-size: clamp(0.8125rem, 0.5932rem + 0.8475vw, 1.25rem);
+    --heading-six-font-size: clamp(0.625rem, 0.3117rem + 1.2107vw, 1.25rem);
+    --paragraph-font-size: 16px;
+
+    /* Blurs */
+    --mobile-menu-blur: 27px;
+}
+
+/* Text Colors */
+.secondary-text-color
+{
+    color: var(--secondary-text-color);
+}
+
+/* Page Headings Text Color */
+.page-headings-text-color
+{
+    color: var(--page-headings-text-color);
+}
+
+/* Background Colors */
+.page-background-color
+{
+    background-color: var(--page-background-color);
+}
+
+/* Mobile Menu Background Color */
+.mobile-menu-background-color
+{
+    background-image: var(--mobile-menu-background-color);
+    backdrop-filter: blur(var(--mobile-menu-blur));
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6
+{
+    font-family: var(--font-family);
+}
+
+h1
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-one-font-size) * 1.2);
+}
+
+h2
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-two-font-size) * 1.2);
+}
+
+h3
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-three-font-size) * 1.2);
+}
+
+h4
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-four-font-size) * 1.2);
+}
+
+h5
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-five-font-size) * 1.2);
+}
+
+h6
+{
+    color: var(--page-headings-text-color);
+    font-size: calc(var(--heading-six-font-size) * 1.2);
+}
+
+p
+{
+    font-size: var(--paragraph-font-size);
+}
