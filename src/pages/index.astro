@@ -1,9 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import landingPageBgImage from "../../src/images/landing_page/hero/hero_bg.jpg";
 
-import Overlay from '../components/Overlay.astro'
+import Section from "../components/Section.astro";
+import Overlay from "../components/Overlay.astro";
 ---
 
 <Layout>
-    
+    <Section class="landing-hero relative w-screen h-screen" id="landing_hero">
+        <header class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase text-7xl">
+            <h1 class="hero-heading-text-color tracking-wider">Hovednavn</h1>
+        </header>
+        <img
+            src="../../src/images/landing_page/hero/hero_bg.jpg"
+            class="w-full h-full object-cover absolute top-0 left-0"
+            alt="hero landing image"
+        />
+        <Overlay />
+    </Section>
 </Layout>

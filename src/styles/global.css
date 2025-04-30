@@ -15,6 +15,7 @@
     /* Text Colors */
     --primary-text-color: #fff;
     --secondary-text-color: #f5c068;
+    --hero-headings-text-color: #fff;
     --page-headings-text-color: #b82024;
 
 
@@ -31,7 +32,17 @@
     --mobile-menu-blur: 27px;
 }
 
+::selection
+{
+    user-select: none;
+}
+
 /* Text Colors */
+.hero-heading-text-color
+{
+    color: var(--hero-headings-text-color);
+}
+
 .secondary-text-color
 {
     color: var(--secondary-text-color);
@@ -56,6 +67,11 @@
     backdrop-filter: blur(var(--mobile-menu-blur));
 }
 
+header
+{
+    color: var(--primary-text-color);
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6
 {
@@ -65,37 +81,37 @@ h1, h2, h3, h4, h5, h6
 h1
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-one-font-size) * 1.2);
+    /* font-size: calc(var(--heading-one-font-size) * 1.2); */
 }
 
 h2
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-two-font-size) * 1.2);
+    /* font-size: calc(var(--heading-two-font-size) * 1.2); */
 }
 
 h3
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-three-font-size) * 1.2);
+    /* font-size: calc(var(--heading-three-font-size) * 1.2); */
 }
 
 h4
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-four-font-size) * 1.2);
+    /* font-size: calc(var(--heading-four-font-size) * 1.2); */
 }
 
 h5
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-five-font-size) * 1.2);
+    /* font-size: calc(var(--heading-five-font-size) * 1.2); */
 }
 
 h6
 {
     color: var(--page-headings-text-color);
-    font-size: calc(var(--heading-six-font-size) * 1.2);
+    /* font-size: calc(var(--heading-six-font-size) * 1.2); */
 }
 
 p
