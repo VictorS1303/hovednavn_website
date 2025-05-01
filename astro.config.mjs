@@ -11,4 +11,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [image()],
+  devToolbar:
+  {
+    enabled: false,
+  }
 });

@@ -5,11 +5,37 @@ import landingPageBgImage from "../../src/images/landing_page/hero/hero_bg.jpg";
 
 import Section from "../components/Section.astro";
 import Overlay from "../components/Overlay.astro";
+import SocialIconsContainer from "../components/SocialIconsContainer.astro";
+
+const iconLinks = [
+    {
+        icon: "fa-brands fa-facebook-f",
+        href: "https://www.facebook.com/profile.php?id=61574049239842",
+        target: "_blank",
+        color: "var(--primary-text-color)",
+        hoverColor: "var(--secondary-text-color)",
+    },
+    {
+        icon: "fa-brands fa-instagram",
+        href: "https://www.instagram.com/hovednavn.dk/",
+        color: "var(--primary-text-color)",
+        hover: "var(--secondary-text-color)",
+        hoverColor: "var(--secondary-text-color)",
+    },
+    {
+        icon: "fa-brands fa-spotify",
+        href: "https://open.spotify.com/artist/3OwrJTLlWahORBut7aEXe8",
+        color: "var(--primary-text-color)",
+        hoverColor: "var(--secondary-text-color)",
+    },
+];
 ---
 
 <Layout>
     <Section class="landing-hero relative w-screen h-screen" id="landing_hero">
-        <header class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase text-7xl">
+        <header
+            class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase text-7xl"
+        >
             <h1 class="hero-heading-text-color tracking-wider">Hovednavn</h1>
         </header>
         <img
@@ -18,5 +44,9 @@ import Overlay from "../components/Overlay.astro";
             alt="hero landing image"
         />
         <Overlay />
+        <SocialIconsContainer
+            list={iconLinks}
+            class="absolute bottom-6 left-[50%] -translate-x-[50%]"
+        />
     </Section>
 </Layout>

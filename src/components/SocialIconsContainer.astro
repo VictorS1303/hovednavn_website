@@ -1,0 +1,22 @@
+---
+const { list = [], class: className = "", id = "",  } = Astro.props;
+---
+
+<article class={`${className} text-white`} id={id}>
+    <ul class="flex gap-8">
+        {
+            list.map(({ icon, href, target, color}) => (
+                <li>
+                    <a
+                        href={href}
+                        target={target}
+                        rel="noopener noreferrer"
+                        class="text-2xl transition-text duration-150 ease-in"
+                    >
+                        <i class=`${icon} hover:text-[var(--secondary-text-color)]` color={color}/>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</article>
