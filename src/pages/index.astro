@@ -19,24 +19,23 @@ const iconLinks = [
         icon: "fa-brands fa-instagram",
         href: "https://www.instagram.com/hovednavn.dk/",
         color: "var(--primary-text-color)",
-        hover: "var(--secondary-text-color)",
-        hoverColor: "var(--secondary-text-color)",
+        target: "_blank",
     },
     {
         icon: "fa-brands fa-spotify",
         href: "https://open.spotify.com/artist/3OwrJTLlWahORBut7aEXe8",
         color: "var(--primary-text-color)",
-        hoverColor: "var(--secondary-text-color)",
+        target: "_blank",
     },
 ];
 ---
 
 <Layout>
-    <Section class="landing-hero relative w-screen h-screen" id="landing_hero">
+    <Section class="landing-hero" id="landing_hero">
         <header
-            class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase text-7xl"
+            class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase"
         >
-            <h1 class="hero-heading-text-color tracking-wider">Hovednavn</h1>
+            <h1 class="hero-heading-text-color tracking-wider text-4xl">Hovednavn</h1>
         </header>
         <img
             src="../../src/images/landing_page/hero/hero_bg.jpg"

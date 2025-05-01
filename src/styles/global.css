@@ -20,12 +20,12 @@
 
 
     /* FONT SIZES */
-    --heading-one-font-size: clamp(1.25rem, 2.3759rem + -1.4528vw, 2rem);
+    /* --heading-one-font-size: clamp(1.25rem, 2.3759rem + -1.4528vw, 2rem);
     --heading-two-font-size: clamp(1.25rem, 1.6253rem + -0.4843vw, 1.5rem);
     --heading-three-font-size: clamp(1.125rem, 1.0623rem + 0.2421vw, 1.25rem);
     --heading-four-font-size: clamp(1rem, 0.8747rem + 0.4843vw, 1.25rem);
     --heading-five-font-size: clamp(0.8125rem, 0.5932rem + 0.8475vw, 1.25rem);
-    --heading-six-font-size: clamp(0.625rem, 0.3117rem + 1.2107vw, 1.25rem);
+    --heading-six-font-size: clamp(0.625rem, 0.3117rem + 1.2107vw, 1.25rem); */
     --paragraph-font-size: 16px;
 
     /* Blurs */
