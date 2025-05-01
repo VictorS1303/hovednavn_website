@@ -1,6 +1,7 @@
 ---
 const {class: className, id: id, currentPage, navItems = []} = Astro.props;
 const isHome = currentPage === "/";
+console.log(currentPage);
 ---
 
 <button
@@ -16,12 +17,6 @@ const isHome = currentPage === "/";
     class="absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:bottom-auto md:left-auto">
     {
       isHome ? (
-        <img
-          src="../../src/images/logos/hovednavn_logo.png"
-          class="h-12 w-auto"
-          alt="Logo"
-        />
-      ) : (
         <a href="/">
           <img
             src="../../src/images/logos/hovednavn_logo.png"
@@ -29,6 +24,12 @@ const isHome = currentPage === "/";
             alt="Logo"
           />
         </a>
+      ) : (
+        <img
+          src="../../src/images/logos/hovednavn_logo.png"
+          class="h-12 w-auto"
+          alt="Logo"
+        />
       )
     }
   </div>
