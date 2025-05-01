@@ -1,4 +1,5 @@
 ---
+import Logo from "../components/Logo.astro";
 const {class: className, id: id, currentPage, navItems = []} = Astro.props;
 const isHome = currentPage === "/";
 console.log(currentPage);
@@ -11,25 +12,17 @@ console.log(currentPage);
 </button>
 
 <nav
-  class={`${className} backdrop-blur-2xl fixed top-0 z-[1000] h-screen w-[250px] -right-[250px] px-6 text-center shadow-md transition-right duration-400 ease-in md:fixed md:backdrop-blur-none md:left-0 md:flex md:justify-center md:h-20 md:w-screen md:px-12 md:items-center`}
+  class={`${className} backdrop-blur-3xl fixed top-0 z-[1000] pt-24 h-screen w-[250px] -right-[250px] px-6 text-center shadow-md transition-right duration-400 ease-in md:fixed md:-mt-12 md:backdrop-blur-none md:left-0 md:top-0 md:-pt-24 md:flex md:justify-center md:h-20 md:w-screen md:px-12 md:items-center`}
   id="main_nav">
   <div
     class="absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:bottom-auto md:left-auto">
     {
       isHome ? (
         <a href="/">
-          <img
-            src="../../src/images/logos/hovednavn_logo.png"
-            class="h-12 w-auto"
-            alt="Logo"
-          />
+          <Logo src="../../src/images/logos/hovednavn_logo.png" />
         </a>
       ) : (
-        <img
-          src="../../src/images/logos/hovednavn_logo.png"
-          class="h-12 w-auto"
-          alt="Logo"
-        />
+        <Logo src="../../src/images/logos/hovednavn_logo.png" />
       )
     }
   </div>

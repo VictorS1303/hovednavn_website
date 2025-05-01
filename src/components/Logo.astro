@@ -1,0 +1,13 @@
+---
+const {
+  src = "../../src/images/logos/hovednavn_logo.png",
+  alt = "Logo",
+  class: className = ""
+} = Astro.props;
+---
+
+<img
+  src={src}
+  alt={alt}
+  class={`h-14 md:h-16 w-auto ${className}`}
+/>
