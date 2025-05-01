@@ -1,0 +1,7 @@
+{
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.bracketPairs": "active",
+    "prettier.bracketSpacing": false,
+    "editor.matchBrackets": "never",
+    "prettier.bracketSameLine": true
+}

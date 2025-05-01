@@ -118,3 +118,9 @@ p
 {
     font-size: var(--paragraph-font-size);
 }
+
+/* Fonts */
+.primary-font
+{
+    font-family: var(--font-family);
+}

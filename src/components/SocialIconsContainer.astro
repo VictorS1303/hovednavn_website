@@ -5,7 +5,7 @@ const { list = [], class: className = "", id = "",  } = Astro.props;
 <article class={`${className} text-white`} id={id}>
     <ul class="flex gap-8">
         {
-            list.map(({ icon, href, target, color}) => (
+            list.map(    (        { icon, href, target, color}) => (
                 <li>
                     <a
                         href={href}

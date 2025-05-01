@@ -1,51 +1,69 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
+import {Image} from "@astrojs/image/components";
 import landingPageBgImage from "../../src/images/landing_page/hero/hero_bg.jpg";
 
 import Section from "../components/Section.astro";
 import Overlay from "../components/Overlay.astro";
 import SocialIconsContainer from "../components/SocialIconsContainer.astro";
+import Navigation from "../components/Navigation.astro";
 
 const iconLinks = [
-    {
-        icon: "fa-brands fa-facebook-f",
-        href: "https://www.facebook.com/profile.php?id=61574049239842",
-        target: "_blank",
-        color: "var(--primary-text-color)",
-        hoverColor: "var(--secondary-text-color)",
-    },
-    {
-        icon: "fa-brands fa-instagram",
-        href: "https://www.instagram.com/hovednavn.dk/",
-        color: "var(--primary-text-color)",
-        target: "_blank",
-    },
-    {
-        icon: "fa-brands fa-spotify",
-        href: "https://open.spotify.com/artist/3OwrJTLlWahORBut7aEXe8",
-        color: "var(--primary-text-color)",
-        target: "_blank",
-    },
+  {
+    icon: "fa-brands fa-facebook-f",
+    href: "https://www.facebook.com/profile.php?id=61574049239842",
+    target: "_blank",
+    color: "var(--primary-text-color)",
+    hoverColor: "var(--secondary-text-color)",
+  },
+  {
+    icon: "fa-brands fa-instagram",
+    href: "https://www.instagram.com/hovednavn.dk/",
+    color: "var(--primary-text-color)",
+    target: "_blank",
+  },
+  {
+    icon: "fa-brands fa-spotify",
+    href: "https://open.spotify.com/artist/3OwrJTLlWahORBut7aEXe8",
+    color: "var(--primary-text-color)",
+    target: "_blank",
+  },
+];
+
+const navItems = [
+  {
+    href: "/about",
+    text: "Om",
+  },
+  {
+    href: "/music",
+    text: "Musik",
+  },
+  {
+    href: "/concerts",
+    text: "Koncerter",
+  },
 ];
 ---
 
 <Layout>
-    <Section class="landing-hero" id="landing_hero">
-        <header
-            class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase"
-        >
-            <h1 class="hero-heading-text-color tracking-wider text-4xl">Hovednavn</h1>
-        </header>
-        <img
-            src="../../src/images/landing_page/hero/hero_bg.jpg"
-            class="w-full h-full object-cover absolute top-0 left-0"
-            alt="hero landing image"
-        />
-        <Overlay />
-        <SocialIconsContainer
-            list={iconLinks}
-            class="absolute bottom-6 left-[50%] -translate-x-[50%]"
-        />
-    </Section>
+  <Navigation navItems={navItems} />
+  <Section
+    class="relative h-full w-full landing-hero overflow-clip"
+    id="landing_hero">
+    <header
+      class="absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase">
+      <h1 class="hero-heading-text-color tracking-wider text-4xl">Hovednavn</h1>
+    </header>
+    <img
+      src="../../src/images/landing_page/hero/hero_bg.jpg"
+      class="w-full h-full object-cover absolute top-0 left-0"
+      alt="hero landing image"
+    />
+    <Overlay />
+    <SocialIconsContainer
+      list={iconLinks}
+      class="absolute bottom-6 left-[50%] -translate-x-[50%]"
+    />
+  </Section>
 </Layout>

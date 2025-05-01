@@ -1,0 +1,75 @@
+---
+const {class: className, id: id, currentPage, navItems = []} = Astro.props;
+const isHome = currentPage === "/";
+---
+
+<button
+  class="btn mobile-menu-toggle-btn text-white z-[1000] fixed top-4 right-4 text-2xl cursor-pointer transition-right duration-400 ease-in md:hidden"
+  id="mobile_menu_toggle_btn">
+  <i class="fas fa-bars"></i>
+</button>
+
+<nav
+  class={`${className} backdrop-blur-2xl fixed top-0 z-[1000] h-screen w-[250px] -right-[250px] px-6 text-center shadow-md transition-right duration-400 ease-in md:fixed md:backdrop-blur-none md:left-0 md:flex md:h-20 md:w-screen md:px-12 md:justify-between md:items-center`}
+  id="main_nav">
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:bottom-auto md:left-auto">
+    {
+      isHome ? (
+        <img
+          src="../../src/images/logos/hovednavn_logo.png"
+          class="h-12 w-auto"
+          alt="Logo"
+        />
+      ) : (
+        <a href="/">
+          <img
+            src="../../src/images/logos/hovednavn_logo.png"
+            class="h-12 w-auto"
+            alt="Logo"
+          />
+        </a>
+      )
+    }
+  </div>
+
+  <ul
+    class="primary-font flex flex-col items-center justify-center gap-8 h-full uppercase text-xl text-white md:flex-row md:static md:h-auto md:ml-auto md:gap-8">
+    {
+      navItems.map((navItem: any) => (
+        <li class="text-2xl font-bold">
+          <a
+            href={navItem.href}
+            class={`${navItem.href === currentPage ? "text-[var(--secondary-text-color)] pointer-events-none" : "hover:text-[var(--secondary-text-color)] transition-text ease-in duration-150"}`}>
+            {navItem.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  const mobileMenuToggleBtn = document.querySelector("#mobile_menu_toggle_btn");
+  const mainNav = document.querySelector("#main_nav");
+
+  mobileMenuToggleBtn?.addEventListener("click", toggleMobileMenu);
+
+  function toggleMobileMenu() {
+    mobileMenuToggleBtn?.classList.toggle("right-[270px]");
+    mainNav?.classList.toggle("right-0");
+    updateMobileMenuButtonIcon();
+  }
+
+  function updateMobileMenuButtonIcon() {
+    const icon = mobileMenuToggleBtn?.querySelector("i");
+
+    if (icon?.classList.contains("fa-bars")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+    } else {
+      icon?.classList.remove("fa-times");
+      icon?.classList.add("fa-bars");
+    }
+  }
+</script>
