@@ -1,0 +1,11 @@
+---
+import SocialIconsContainer from "./SocialIconsContainer.astro"
+
+const {class: className, id: id} = Astro.props
+
+
+---
+
+<footer class=`{className}` id={id}>
+  <slot/>
+</footer>
