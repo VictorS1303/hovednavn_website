@@ -16,7 +16,12 @@
     --primary-text-color: #fff;
     --secondary-text-color: #f5c068;
     --hero-headings-text-color: #fff;
-    --page-headings-text-color: #b82024;
+    --scroll-to-top-btn-bg-color: #f5c068;
+    --scroll-to-top-btn-border-color: #801115;
+    --scroll-to-top-btn-hover-bg-color: #801115;
+    --scroll-to-top-btn-hover-color: #f5c068;
+    --scroll-to-top-btn-hover-border-color: #801115;
+    --page-headings-text-color: #801115;
 
 
     /* FONT SIZES */
