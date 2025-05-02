@@ -1,7 +1,7 @@
 ---
-import Logo from '../components/Logo.astro'
-const {class: className, id: id, currentPage, navItems = []} = Astro.props
-const isHome = currentPage === '/'
+const {class: className, id: id, currentPage, navItems = []} = Astro.props;
+const isHome = currentPage === '/';
+console.log(currentPage);
 ---
 
 <button
@@ -43,30 +43,22 @@ const isHome = currentPage === '/'
 </nav>
 
 <script>
-  const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn')
-  const mainNav = document.querySelector('#main_nav')
+  const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn');
+  const mainNav = document.querySelector('#main_nav');
 
-  mobileMenuToggleBtn?.addEventListener('click', toggleMobileMenu)
+  mobileMenuToggleBtn?.addEventListener('click', toggleMobileMenu);
 
-  function toggleMobileMenu()
-  {
-    mobileMenuToggleBtn?.classList.toggle('right-[270px]')
-    mainNav?.classList.toggle('right-0')
-    updateMobileMenuButtonIcon()
+  function toggleMobileMenu() {
+    mobileMenuToggleBtn?.classList.toggle('right-[270px]');
+    mainNav?.classList.toggle('right-0');
+    updateMobileMenuButtonIcon();
   }
 
   function updateMobileMenuButtonIcon() {
     const icon = mobileMenuToggleBtn?.querySelector('i')
 
-    if (icon?.classList.contains('fa-bars'))
-    {
-      icon.classList.remove('fa-bars')
-      icon.classList.add('fa-times')
-    }
-    else
-    {
-      icon?.classList.remove('fa-times')
-      icon?.classList.add('fa-bars')
-    }
+    icon?.classList.contains('fa-bars')
+        ? (icon.classList.remove('fa-bars'), icon.classList.add('fa-times'))
+        : (icon?.classList.add('fa-bars'), icon?.classList.remove('fa-times'))
   }
 </script>
