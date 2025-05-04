@@ -2,6 +2,8 @@
 import Logo from '../components/Logo.astro'
 const {class: className, id: id, currentPage, navItems = []} = Astro.props
 const isHome = currentPage === '/'
+const activePage = new URL(Astro.request.url).pathname
+console.log(activePage)
 ---
 
 <button
@@ -17,11 +19,11 @@ const isHome = currentPage === '/'
     class='absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:bottom-auto md:left-auto'>
     {
       isHome ? (
+        <Logo src='../../src/images/logos/hovednavn_logo.png' />
+      ) : (
         <a href='/'>
           <Logo src='../../src/images/logos/hovednavn_logo.png' />
         </a>
-      ) : (
-        <Logo src='../../src/images/logos/hovednavn_logo.png' />
       )
     }
   </div>
@@ -43,22 +45,22 @@ const isHome = currentPage === '/'
 </nav>
 
 <script>
-  const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn');
-  const mainNav = document.querySelector('#main_nav');
+  const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn')
+  const mainNav = document.querySelector('#main_nav')
 
-  mobileMenuToggleBtn?.addEventListener('click', toggleMobileMenu);
+  mobileMenuToggleBtn?.addEventListener('click', toggleMobileMenu)
 
   function toggleMobileMenu() {
-    mobileMenuToggleBtn?.classList.toggle('right-[270px]');
-    mainNav?.classList.toggle('right-0');
-    updateMobileMenuButtonIcon();
+    mobileMenuToggleBtn?.classList.toggle('right-[270px]')
+    mainNav?.classList.toggle('right-0')
+    updateMobileMenuButtonIcon()
   }
 
   function updateMobileMenuButtonIcon() {
     const icon = mobileMenuToggleBtn?.querySelector('i')
 
     icon?.classList.contains('fa-bars')
-        ? (icon.classList.remove('fa-bars'), icon.classList.add('fa-times'))
-        : (icon?.classList.add('fa-bars'), icon?.classList.remove('fa-times'))
+      ? (icon.classList.remove('fa-bars'), icon.classList.add('fa-times'))
+      : (icon?.classList.add('fa-bars'), icon?.classList.remove('fa-times'))
   }
 </script>
