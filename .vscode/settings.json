@@ -8,5 +8,7 @@
     "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
     "prettier.jsxSingleQuote": true,
     "prettier.singleQuote": true,
-    "typescript.format.placeOpenBraceOnNewLineForFunctions": true
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "editor.fontWeight": "normal",
+    "editor.formatOnSave": true,
 }
