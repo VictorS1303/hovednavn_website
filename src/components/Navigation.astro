@@ -1,9 +1,8 @@
 ---
 import Logo from '../components/Logo.astro'
-const {class: className, id: id, currentPage, navItems = []} = Astro.props
-const isHome = currentPage === '/'
+const {class: className, id: id, navItems = []} = Astro.props
 const activePage = new URL(Astro.request.url).pathname
-console.log(activePage)
+const isHome = activePage === '/'
 ---
 
 <button
@@ -35,7 +34,7 @@ console.log(activePage)
         <li class='text-2xl font-bold'>
           <a
             href={navItem.href}
-            class={`${navItem.href === currentPage ? 'text-[var(--secondary-text-color)] pointer-events-none' : 'hover:text-[var(--secondary-text-color)] transition-text ease-in duration-150'}`}>
+            class={`${navItem.href === activePage ? 'text-[var(--secondary-text-color)] pointer-events-none' : 'hover:text-[var(--secondary-text-color)] transition-text ease-in duration-150'}`}>
             {navItem.text}
           </a>
         </li>
