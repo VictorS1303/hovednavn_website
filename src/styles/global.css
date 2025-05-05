@@ -11,6 +11,7 @@
 
     /* Background Colors */
     --mobile-menu-background-color: linear-gradient(167.99deg, rgba(239, 239, 239, 0.2) 0%, rgba(239, 239, 239, 0.2) 100%);
+    --body-bg-color: #f5c068;
 
     /* Text Colors */
     --primary-text-color: #fff;
