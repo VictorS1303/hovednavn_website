@@ -7,7 +7,6 @@ import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 import Section from '../components/Section.astro'
 import Overlay from '../components/Overlay.astro'
 import SocialIconsContainer from '../components/SocialIconsContainer.astro'
-import Navigation from '../components/Navigation.astro'
 import MainFooter from '../components/MainFooter.astro'
 
 const navItems = [
@@ -26,8 +25,7 @@ const navItems = [
 ]
 ---
 
-<Layout>
-  <Navigation navItems={navItems} />
+<Layout navItems={navItems}>
   <Section class='relative h-full w-full landing-about' id='landing_hero'>
     <header
       class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
