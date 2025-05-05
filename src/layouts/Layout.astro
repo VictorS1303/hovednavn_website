@@ -1,6 +1,7 @@
 ---
-const {title, navItems = []} = Astro.props
+const {title, navItems = [], pageIntroText} = Astro.props
 import Navigation from '../components/Navigation.astro'
+import PageIntroText from '../components/PageIntroText.astro'
 import LandingPageFooter from '../components/LandingPageFooter.astro'
 import MainFooter from '../components/MainFooter.astro'
 import '../styles/global.css'
@@ -21,9 +22,10 @@ const isHome = activePage === '/'
       crossorigin='anonymous'></script>
     <title>{title}</title>
   </head>
-  <body class="bg-[var(--body-bg-color)]">
+  <body class='bg-[var(--body-bg-color)]'>
     <Navigation navItems={navItems} />
     <slot />
+    {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
     <!-- Inserting site-based footer -->
     {!isHome ? <MainFooter /> : <LandingPageFooter />}
   </body>
