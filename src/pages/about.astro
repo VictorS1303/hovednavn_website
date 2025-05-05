@@ -1,14 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import ScrollToTopBtn from '../components/ScrollToTopBtn.astro'
-
-import {Image} from '@astrojs/image/components'
-import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
-
+import Timeline from '../components/Timeline.astro'
 import Section from '../components/Section.astro'
 import Overlay from '../components/Overlay.astro'
-import SocialIconsContainer from '../components/SocialIconsContainer.astro'
-import MainFooter from '../components/MainFooter.astro'
 
 const navItems = [
   {
@@ -43,7 +38,9 @@ const navItems = [
     <Overlay />
   </Section>
 
-  <Section class='info-about' />
+  <Section class='info-about'>
+    
+  </Section>
 
   <ScrollToTopBtn />
 </Layout>
