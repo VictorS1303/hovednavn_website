@@ -1,7 +1,33 @@
 ---
 import Footer from './Footer.astro'
+import SocialIconsContainer from './SocialIconsContainer.astro'
+
+const iconLinks = [
+  {
+    icon: 'fa-brands fa-facebook-f',
+    href: 'https://www.facebook.com/profile.php?id=61574049239842',
+    target: '_blank',
+    color: 'var(--primary-text-color)',
+    hoverColor: 'var(--secondary-text-color)',
+  },
+  {
+    icon: 'fa-brands fa-instagram',
+    href: 'https://www.instagram.com/hovednavn.dk/',
+    target: '_blank',
+  },
+  {
+    icon: 'fa-brands fa-spotify',
+    href: 'https://open.spotify.com/artist/3OwrJTLlWahORBut7aEXe8',
+    target: '_blank',
+  },
+]
 ---
 
-<Footer>
-  <slot />
+<Footer class='absolute bottom-5 left-[50%] -translate-x-[50%]'>
+  <SocialIconsContainer
+    list={iconLinks}
+    class='flex gap-4'
+    color={iconLinks[0].color}
+    hoverColor={iconLinks[0].hoverColor}
+  />
 </Footer>
