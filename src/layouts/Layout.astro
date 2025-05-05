@@ -1,5 +1,6 @@
 ---
 const {title, navItems = [], pageIntroText} = Astro.props
+import Main from '../components/Main.astro'
 import Navigation from '../components/Navigation.astro'
 import PageIntroText from '../components/PageIntroText.astro'
 import LandingPageFooter from '../components/LandingPageFooter.astro'
@@ -23,10 +24,24 @@ const isHome = activePage === '/'
     <title>{title}</title>
   </head>
   <body class='bg-[var(--body-bg-color)]'>
+    <!-- Navigation -->
     <Navigation navItems={navItems} />
-    <slot />
+
+    <!-- Main Content -->
+    <Main>
+      <slot />
+    </Main>
+
+    <!-- 
+      Checking to see if the route is equal to the one of the index page to
+      ensure that the component isn't being rendered unpuporsefully.
+    -->
     {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
-    <!-- Inserting site-based footer -->
+
+    <!-- 
+      Generating a different footer based on if the
+      route is equal to the index page's or not.
+    -->
     {!isHome ? <MainFooter /> : <LandingPageFooter />}
   </body>
 </html>

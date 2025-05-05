@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PageIntroText from '../components/PageIntroText.astro'
 import ScrollToTopBtn from '../components/ScrollToTopBtn.astro'
 import {Image} from '@astrojs/image/components'
 import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
@@ -48,7 +49,7 @@ const navItems = [
 ]
 ---
 
-<Layout navItems={navItems}>
+<Layout navItems={navItems} pageIntroText='Aloha!'>
   <!-- <Navigation /> -->
   <Section
     class='relative h-full w-full landing-hero overflow-clip'
