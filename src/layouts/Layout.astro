@@ -24,6 +24,7 @@ const isHome = activePage === '/'
   <body>
     <Navigation navItems={navItems} />
     <slot />
+
     <!-- Inserting site-based footer -->
     {!isHome ? <MainFooter /> : <LandingPageFooter />}
   </body>
