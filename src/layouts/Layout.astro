@@ -1,7 +1,12 @@
 ---
-import Navigation from '../components/Navigation.astro'
 const {title, navItems = []} = Astro.props
+import Navigation from '../components/Navigation.astro'
+import LandingPageFooter from '../components/LandingPageFooter.astro'
+import MainFooter from '../components/MainFooter.astro'
 import '../styles/global.css'
+
+const activePage = new URL(Astro.request.url).pathname
+const isHome = activePage === '/'
 ---
 
 <!doctype html>
@@ -19,5 +24,7 @@ import '../styles/global.css'
   <body>
     <Navigation navItems={navItems} />
     <slot />
+    <!-- Inserting site-based footer -->
+    {!isHome ? <MainFooter /> : <LandingPageFooter />}
   </body>
 </html>
