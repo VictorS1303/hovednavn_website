@@ -1,0 +1,28 @@
+---
+import Section from './Section.astro'
+import Overlay from './Overlay.astro'
+
+const {
+  class: className,
+  id: id,
+  heroHeaderText,
+  heroImageSrc,
+  heroImageAlt
+} = Astro.props
+---
+
+<div class="relative h-full w-full overflow-hidden" id={id}>
+  <header class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100] uppercase">
+    <h1 class="hero-heading-text-color tracking-wider text-[44px] md:text-8xl">
+      {heroHeaderText}
+    </h1>
+  </header>
+
+  <img
+    src={heroImageSrc}
+    alt={heroImageAlt}
+    class="w-full h-screen object-cover absolute top-0 left-0"
+  />
+  
+  <Overlay />
+</div>

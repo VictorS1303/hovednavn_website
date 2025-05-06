@@ -3,6 +3,7 @@ const {title, navItems = [], pageIntroText} = Astro.props
 import Main from '../components/Main.astro'
 import Navigation from '../components/Navigation.astro'
 import PageIntroText from '../components/PageIntroText.astro'
+import Hero from '../components/Hero.astro'
 import LandingPageFooter from '../components/LandingPageFooter.astro'
 import MainFooter from '../components/MainFooter.astro'
 import '../styles/global.css'
@@ -30,10 +31,11 @@ const isHome = activePage === '/'
       Checking to see if the route is equal to the one of the index page to
       ensure that the component isn't being rendered unpuporsefully.
     -->
-    {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
     <!-- Main Content -->
     <Main>
       <slot />
+      <Hero />
+      {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
     </Main>
 
     <!-- 

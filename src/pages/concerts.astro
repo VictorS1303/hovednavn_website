@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import ScrollToTopBtn from '../components/ScrollToTopBtn.astro'
+import Hero from '../components/Hero.astro'
 import {Image} from '@astrojs/image/components'
 import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
@@ -26,20 +27,12 @@ const navItems = [
 <Layout
   navItems={navItems}
   pageIntroText='Vi tager naturligvis ud og spiller for jer allesammen - unge som gamle! Så find et sted nær jer, og så ses vi til en svingom eller to; for hvis der er en, vi helst vil optræde for, er det dig!'>
-  <Section class='relative h-full w-full landing-about' id='landing_hero'>
-    <header
-      class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
-      <h1
-        class='hero-heading-text-color tracking-wider text-[44px] md:text-8xl'>
-        KONCERTER
-      </h1>
-    </header>
-    <img
-      src='../src/images/concert/hero/hero_bg.png'
-      class='w-full h-full object-cover absolute top-0 left-0'
-      alt='hero landing image'
+  <Section class={`h-screen relative`} id='music'>
+    <Hero
+      heroHeaderText='Koncerter'
+      heroImageSrc='../src/images/concert/hero/hero_bg.png'
+      heroImageAlt='hero concert image'
     />
-    <Overlay />
   </Section>
 
   <ScrollToTopBtn />

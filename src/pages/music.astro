@@ -6,6 +6,7 @@ import {Image} from '@astrojs/image/components'
 import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
 import Section from '../components/Section.astro'
+import Hero from '../components/Hero.astro'
 import Overlay from '../components/Overlay.astro'
 import SocialIconsContainer from '../components/SocialIconsContainer.astro'
 import Navigation from '../components/Navigation.astro'
@@ -26,27 +27,25 @@ const navItems = [
   },
 ]
 ---
-
+  <!-- 
+  Hero
+  PageIntroText
+  RecordPlayer
+  Footer  
+-->
 <Layout
   title='Musik'
   pageIntroText='Velkommen til vores musikalske univers. Her kan du få en forsmag på, hvad vi har at byde på - om det er lette melodier eller mere eftertænksomme tekster, har vi helt sikkert noget for dig! Så giv det et lyt, og så ses vi forhåbentlig til en koncert eller to.'
   navItems={navItems}>
-  <Section class='relative h-full w-full music-about' id='music_hero'>
-    <header
-      class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
-      <h1
-        class='hero-heading-text-color tracking-wider text-[44px] md:text-8xl'>
-        MUSIK
-      </h1>
-    </header>
-    <img
-      src='../src/images/concert/hero/hero_bg.png'
-      class='w-full h-full object-cover absolute top-0 left-0'
-      alt='hero music image'
-    />
-    <Overlay />
-  </Section>
 
-  <ScrollToTopBtn />
-  <RecordPlayer />
+
+  <Section class={`h-screen relative`} id='music'>
+    <Hero
+      heroHeaderText='Musik'
+      heroImageSrc='../src/images/concert/hero/hero_bg.png'
+      heroImageAlt='hero music image'
+    />
+  </Section>
 </Layout>
+
+<ScrollToTopBtn />
