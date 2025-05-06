@@ -7,6 +7,7 @@ import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
 import Section from '../components/Section.astro'
 import Overlay from '../components/Overlay.astro'
+import PageIntroText from '../components/PageIntroText.astro'
 
 const navItems = [
   {
@@ -24,9 +25,7 @@ const navItems = [
 ]
 ---
 
-<Layout
-  navItems={navItems}
-  pageIntroText='Vi tager naturligvis ud og spiller for jer allesammen - unge som gamle! Så find et sted nær jer, og så ses vi til en svingom eller to; for hvis der er en, vi helst vil optræde for, er det dig!'>
+<Layout navItems={navItems} pageIntroText=''>
   <Section class={`h-screen relative`} id='music'>
     <Hero
       heroHeaderText='Koncerter'
@@ -34,6 +33,10 @@ const navItems = [
       heroImageAlt='hero concert image'
     />
   </Section>
+
+  <PageIntroText
+    pageIntroText='Vi tager naturligvis ud og spiller for jer allesammen - unge som gamle! Så find et sted nær jer, og så ses vi til en svingom eller to; for hvis der er en, vi helst vil optræde for, er det dig!'
+  />
 
   <ScrollToTopBtn />
 </Layout>
