@@ -26,17 +26,15 @@ const isHome = activePage === '/'
   <body class='bg-[var(--body-bg-color)]'>
     <!-- Navigation -->
     <Navigation navItems={navItems} />
-
-    <!-- Main Content -->
-    <Main>
-      <slot />
-    </Main>
-
     <!-- 
       Checking to see if the route is equal to the one of the index page to
       ensure that the component isn't being rendered unpuporsefully.
     -->
     {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
+    <!-- Main Content -->
+    <Main>
+      <slot />
+    </Main>
 
     <!-- 
       Generating a different footer based on if the
