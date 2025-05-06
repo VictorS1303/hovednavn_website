@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 @theme
 {
@@ -26,6 +27,11 @@
     --footer-text-color: #801115;
     --page-intro-text-color: #000;
     --record-player-bg-color: #801115;
+    --track-title-text-color: #fff;
+    --track-duration-text-color: #fff;
+    --progress-bar-inner-bg-color: #f5c068;
+    --control-btns-color: #fff;
+    --control-btns-hover-color: #f5c068;
 
 
     /* FONT SIZES */
@@ -137,4 +143,30 @@ p
 .primary-font
 {
     font-family: var(--font-family);
+}
+
+/* Record Player */
+.track-title
+{
+    color: var(--track-title-text-color);
+}
+
+.progress-bar-inner
+{
+    background-color: var(--progress-bar-inner)
+}
+
+.track-duration-color
+{
+    color: var(--track-duration-text-color);
+}
+
+.control-btn
+{
+    color: var(--control-btns-color);
+
+    &:hover
+    {
+        color: var(--control-btns-hover-color);
+    }
 }
