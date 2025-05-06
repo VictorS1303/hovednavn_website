@@ -3,7 +3,6 @@ const {title, navItems = [], pageIntroText} = Astro.props
 import Main from '../components/Main.astro'
 import Navigation from '../components/Navigation.astro'
 import PageIntroText from '../components/PageIntroText.astro'
-import Hero from '../components/Hero.astro'
 import LandingPageFooter from '../components/LandingPageFooter.astro'
 import MainFooter from '../components/MainFooter.astro'
 import '../styles/global.css'
@@ -33,9 +32,8 @@ const isHome = activePage === '/'
     -->
     <!-- Main Content -->
     <Main>
-      <slot />
-      <Hero />
       {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
+      <slot />
     </Main>
 
     <!-- 

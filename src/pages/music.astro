@@ -27,18 +27,14 @@ const navItems = [
   },
 ]
 ---
-  <!-- 
+
+<!-- 
   Hero
   PageIntroText
   RecordPlayer
   Footer  
 -->
-<Layout
-  title='Musik'
-  pageIntroText='Velkommen til vores musikalske univers. Her kan du få en forsmag på, hvad vi har at byde på - om det er lette melodier eller mere eftertænksomme tekster, har vi helt sikkert noget for dig! Så giv det et lyt, og så ses vi forhåbentlig til en koncert eller to.'
-  navItems={navItems}>
-
-
+<Layout title='Musik' navItems={navItems}>
   <Section class={`h-screen relative`} id='music'>
     <Hero
       heroHeaderText='Musik'
@@ -46,6 +42,9 @@ const navItems = [
       heroImageAlt='hero music image'
     />
   </Section>
+  <RecordPlayer />
 </Layout>
 
 <ScrollToTopBtn />
+
+<!-- pageIntroText='Velkommen til vores musikalske univers. Her kan du få en forsmag på, hvad vi har at byde på - om det er lette melodier eller mere eftertænksomme tekster, har vi helt sikkert noget for dig! Så giv det et lyt, og så ses vi forhåbentlig til en koncert eller to.' -->
