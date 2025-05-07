@@ -1,0 +1,15 @@
+---
+
+const {class: className, id: id, src, alt} = Astro.props
+---
+
+<div
+  class='container vinyl-container relative h-[150px] w-[150px] bg-black rounded-full'
+  id='vinyl_container'>
+  <img
+    class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full p-2 object-cover'
+    src={src}
+    id="cover_image"
+    alt={alt}
+  />
+</div>

@@ -32,6 +32,8 @@
     --progress-bar-inner-bg-color: #f5c068;
     --control-btns-color: #fff;
     --control-btns-hover-color: #f5c068;
+    
+    --vinyl-spin:
 
 
     /* FONT SIZES */
@@ -170,3 +172,15 @@ p
         color: var(--control-btns-hover-color);
     }
 }
+
+/* Vinyl */
+.spin
+{
+    animation: spin 2 linear infinite;
+}
+
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
