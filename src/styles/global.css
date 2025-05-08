@@ -32,8 +32,10 @@
     --progress-bar-inner-bg-color: #f5c068;
     --control-btns-color: #fff;
     --control-btns-hover-color: #f5c068;
-    
-    --vinyl-spin:
+    --track-list-text-heading-color: #fff;
+    --track-list-text-color: #fff;
+    --track-list-text-hover-color: #f5c068;
+    --current-song-text-color: #f5c068;
 
 
     /* FONT SIZES */
@@ -173,14 +175,22 @@ p
     }
 }
 
+/* Current Song */
+.current-song
+{
+    color: var(--current-song-text-color);
+    font-weight: bolder;
+    pointer-events: none;
+}
+
 /* Vinyl */
 .spin
 {
-    animation: spin 2 linear infinite;
+    animation: spin 2.5s linear infinite;
 }
 
 @keyframes spin {
     to {
       transform: rotate(360deg);
     }
-  }
+}
