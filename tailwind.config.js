@@ -11,20 +11,10 @@ module.exports =
     {
         extend:
         {
-            backgroundColors:
+            animation:
             {
-                pageBackgroundColor: '#F5C068',
-                mobileMenuBackgroundColor: '(167.99deg, rgba(239, 239, 239, 0.2) 0%, rgba(239, 239, 239, 0.2) 100%)',
-                mobileMenuBlur: 'backdrop-filter: blur(27.5px)',
-            },
-
-            textColors:
-            {
-                primaryTextColor: '#fff',
-                secondaryTextColor: '#F5C068',
-                pageHeadingsTextColor: '#B82024',
-            },
-
+                "spin-slow": "spin .5s linear infinite"
+            }
         },
     },
     plugins:
