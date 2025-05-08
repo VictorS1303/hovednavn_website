@@ -186,6 +186,7 @@ const {class: className, id: id} = Astro.props
     }
     loadSong(trackData[songIndex])
     audio.play()
+    trackCoverImage?.classList.add('spin')
     updatePlayPauseIconState()
   }
 
@@ -200,6 +201,7 @@ const {class: className, id: id} = Astro.props
     }
     loadSong(trackData[songIndex])
     audio.play()
+    trackCoverImage?.classList.add('spin')
     updatePlayPauseIconState()
   }
 
