@@ -9,7 +9,7 @@ const {
   concertLocation,
   isArtistCard,
   artistName,
-  bandRole,
+  artistBandRole,
 } = Astro.props
 import Overlay from './Overlay.astro'
 import ConcertCardContent from './ConcertCardContent.astro'
@@ -34,7 +34,10 @@ import ArtistCardContent from './ArtistCardContent.astro'
         )}
 
         {isArtistCard && (
-          <ArtistCardContent artistName={artistName} bandRole={bandRole} />
+          <ArtistCardContent
+            artistName={artistName}
+            artistBandRole={artistBandRole}
+          />
         )}
       </article>
     </a>
@@ -52,7 +55,10 @@ import ArtistCardContent from './ArtistCardContent.astro'
       )}
 
       {isArtistCard && (
-        <ArtistCardContent artistName={artistName} bandRole={bandRole} />
+        <ArtistCardContent
+          artistName={artistName}
+          artistBandRole={artistBandRole}
+        />
       )}
     </article>
   )
