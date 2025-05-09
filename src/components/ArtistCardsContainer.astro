@@ -36,7 +36,9 @@ const artistCardsData = [
 ]
 ---
 
-<div class='container artist-cards-container flex flex-col items-center gap-4 w-full' id='artist_cards_container'>
+<div
+  class='container artist-cards-container flex flex-col items-center gap-4 w-full'
+  id='artist_cards_container'>
   {
     artistCardsData.map((artistCard, index) => (
       <a href={`/about/${index}`}>

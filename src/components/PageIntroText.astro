@@ -3,7 +3,7 @@ const {class: className, id: id, pageIntroText} = Astro.props
 ---
 
 <h3
-  class={`{className} w-[30ch] px-12 mx-auto py-20 text-2xl page-intro-text md:mx-start md:w-[65ch]`}
+  class={`${className} px-6 py-20 text-2xl page-intro-text w-full max-w-[65ch] mx-auto md:mx-0`}
   id={id}>
   {pageIntroText}
 </h3>
