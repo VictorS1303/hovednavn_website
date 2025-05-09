@@ -1,0 +1,10 @@
+---
+const {artistName, bandRole} = Astro.props
+---
+
+<div class="container artist-card-content-container absolute bottom-3 text-center text-white text-base/7">
+  <h3 class="artist-name text-[23px]" id="artist_name">
+    {artistName}
+  </h3>
+  <p class="band-role text-[18px]" id="band_role">{bandRole}</p>
+</div>

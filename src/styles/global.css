@@ -102,46 +102,46 @@ h1, h2, h3, h4, h5, h6
     font-family: var(--font-family);
 }
 
-h1
+/* h1
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-one-font-size) * 1.2); */
+    font-size: calc(var(--heading-one-font-size) * 1.2);
 }
 
 h2
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-two-font-size) * 1.2); */
+    font-size: calc(var(--heading-two-font-size) * 1.2);
 }
 
 h3
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-three-font-size) * 1.2); */
+    font-size: calc(var(--heading-three-font-size) * 1.2);
 }
 
 h4
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-four-font-size) * 1.2); */
+    font-size: calc(var(--heading-four-font-size) * 1.2);
 }
 
 h5
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-five-font-size) * 1.2); */
+    font-size: calc(var(--heading-five-font-size) * 1.2);
 }
 
 h6
 {
     color: var(--page-headings-text-color);
-    /* font-size: calc(var(--heading-six-font-size) * 1.2); */
-}
+    font-size: calc(var(--heading-six-font-size) * 1.2);
+} */
 
-p
+/* p
 {
     font-size: var(--paragraph-font-size);
-}
+} */
 
 .page-intro-text
 {

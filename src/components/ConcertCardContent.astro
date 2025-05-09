@@ -1,0 +1,25 @@
+---
+const {concertDate, concertLocation, concertPrice} = Astro.props
+---
+
+<div class="container concert-card-content-container absolute top-0 left-0 flex flex-col justify-between px-3 py-4 z-[1000] h-full w-full text-white">
+  <h3 class="date text-xl text-[var(--secondary-text-color)] font-bolder" id="date">
+    {concertDate}
+  </h3>
+
+  <div class="container location-and-price-container flex justify-between items-center text-base/10">
+    <div>
+      <h2 class="location text-[25px] font-bold">
+       {concertLocation}
+      </h2>
+      <p class="price text-xl font-bolder" id="price">
+        {concertPrice} kr.
+      </p>
+    </div>
+  
+    <button class="btn-show-location-btn flex flex-col justify-center items-center mt-4 text-base/6 cursor-pointer mr-2 group" id="show_location_btn">
+      <i class="fas fa-map-marker-alt text-2xl transition-text duration-150 ease-in group-hover:text-[var(--secondary-text-color)]"></i>
+      <p>Vis lokation</p>
+    </button>
+  </div>
+</div>

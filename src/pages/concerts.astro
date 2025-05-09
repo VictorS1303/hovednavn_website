@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import ScrollToTopBtn from '../components/ScrollToTopBtn.astro'
 import Hero from '../components/Hero.astro'
+import Card from '../components/Card.astro'
 import {Image} from '@astrojs/image/components'
 import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
@@ -37,6 +38,12 @@ const navItems = [
   <PageIntroText
     pageIntroText='Vi tager naturligvis ud og spiller for jer allesammen - unge som gamle! Så find et sted nær jer, og så ses vi til en svingom eller to; for hvis der er en, vi helst vil optræde for, er det dig!'
   />
-
+  <Card
+    src='../src/images/concert/concert_cards/concert_card_bg.jpg'
+    showOverlay={true}
+    isConcertCard={true}
+    artistName='Samuel Himmelstrup'
+    bandRole='Sanger'
+  />
   <ScrollToTopBtn />
 </Layout>

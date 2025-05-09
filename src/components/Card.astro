@@ -1,0 +1,59 @@
+---
+const {
+  class: className,
+  id: id,
+  src,
+  showOverlay,
+  isConcertCard,
+  concertDate,
+  concertLocation,
+  isArtistCard,
+  artistName,
+  bandRole,
+} = Astro.props
+import Overlay from './Overlay.astro'
+import ConcertCardContent from './ConcertCardContent.astro'
+import ArtistCardContent from './ArtistCardContent.astro'
+---
+
+{
+  isArtistCard ? (
+    <a href={`/artist/${artistName}`} class='block'>
+      {' '}
+      {/* You can adjust the href as needed */}
+      <article class={`${className} relative h-[325px] w-[300px]`} id={id}>
+        <img src={src} class='h-full w-full object-cover' />
+        {showOverlay && <Overlay />}
+
+        {/* Only show ConcertCardContent if isConcertCard is true */}
+        {isConcertCard && (
+          <ConcertCardContent
+            concertDate={concertDate}
+            concertLocation={concertLocation}
+          />
+        )}
+
+        {isArtistCard && (
+          <ArtistCardContent artistName={artistName} bandRole={bandRole} />
+        )}
+      </article>
+    </a>
+  ) : (
+    <article class={`${className} relative h-[325px] w-[300px]`} id={id}>
+      <img src={src} class='h-full w-full object-cover' />
+      {showOverlay && <Overlay />}
+
+      {/* Only show ConcertCardContent if isConcertCard is true */}
+      {isConcertCard && (
+        <ConcertCardContent
+          concertDate={concertDate}
+          concertLocation={concertLocation}
+        />
+      )}
+
+      {isArtistCard && (
+        <ArtistCardContent artistName={artistName} bandRole={bandRole} />
+      )}
+    </article>
+  )
+}
