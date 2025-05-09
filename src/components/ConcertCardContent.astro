@@ -5,7 +5,8 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
 <div
   class='container concert-card-content-container absolute top-0 left-0 flex flex-col justify-between px-3 py-4 z-[1000] h-full w-full text-white overflow-hidden'>
   <div
-    class='flex flex-col justify-between container map-container absolute inset-0 z-50 h-full w-full bg-black translate-y-[100%] transition-translate duration-400 ease-in'>
+    class='flex flex-col justify-between container map-container absolute inset-0 z-50 h-full w-full translate-y-[100%] transition-translate duration-400 ease-in'>
+    <div class='concert-map absolute h-full w-full' id='concert_map'></div>
     <button
       class='btn close-map-btn grid self-end place-content-center h-[35px] w-[35px] z-[55] text-[var(--close-map-btn-text-color)] bg-white cursor-pointer transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
       id='close_map_btn'>
@@ -13,7 +14,7 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
     </button>
 
     <div
-      class='container map-control-container flex justify-between items-center px-3 h-10 bg-white'
+      class='container map-control-container flex justify-between items-center z-[300] px-3 h-10 bg-white'
       id='map_control_container'>
       <a
         href='#'
@@ -56,9 +57,17 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
   </div>
 </div>
 
+<script
+  src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQlUrqkxhAPlFlgpWnoaWfR_7YhE-P84&callback=initMap'
+  async
+  defer>
+></script>
+
 <script>
   const showLocationBtns = document.querySelectorAll('.show-location-btn')
   const closeLocationBtns = document.querySelectorAll('.close-map-btn')
+  const concertMap = document.querySelector('.concert-map')
+  window.addEventListener('DOMContentLoaded', initMap)
 
   showLocationBtns.forEach((showLocationBtn) => {
     showLocationBtn.addEventListener('click', (e) => showLocation(e))
@@ -87,4 +96,29 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
       mapContainer.classList.remove('-translate-y-[0]')
     }
   }
+
+  // Concert Map
+  function initMap() {
+    const concertPosition = { lat: 55.67546047084187, lng: 12.586746353298928 };
+
+    // Map options to display roads from above
+    const options = {
+        zoom: 15, // Adjust to a higher value for more detailed street-level view
+        center: concertPosition,
+        draggable: false,
+        disableDefaultUI: true, // Disable default UI elements
+        mapTypeId: 'roadmap', // Ensures roads and streets are shown
+    };
+
+    // Create the map centered on the given coordinates
+    const map = new google.maps.Map(document.getElementById('concert_map'), options);
+
+    // Add a marker at the concert location
+    const marker = new google.maps.Marker({
+        position: concertPosition,
+        draggable: false,
+        map: map,
+        icon: '../src/images/map_marker/map_marker.png'
+    });
+}
 </script>
