@@ -7,6 +7,7 @@ import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
 import Section from '../components/Section.astro'
 import Overlay from '../components/Overlay.astro'
+import Hero from '../components/Hero.astro'
 import SocialIconsContainer from '../components/SocialIconsContainer.astro'
 import Navigation from '../components/Navigation.astro'
 import LandingPageFooter from '../components/LandingPageFooter.astro'
@@ -49,11 +50,9 @@ const navItems = [
 ]
 ---
 
-<Layout navItems={navItems} pageIntroText='Aloha!'>
-  <!-- <Navigation /> -->
-  <Section
-    class='relative h-full w-full landing-hero overflow-clip'
-    id='landing_hero'>
+<Layout title='Velkommen' navItems={navItems}>
+  <!-- <Hero src='../src/images/landing_page/hero/hero_bg.jpg' /> -->
+  <Section class='relative h-screen w-screen landing-hero' id='landing_hero'>
     <header
       class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
       <h1

@@ -32,14 +32,14 @@ const isHome = activePage === '/'
       crossorigin='anonymous'></script>
     <title>{title}</title>
   </head>
-  <body class='bg-[var(--body-bg-color)]'>
+  <body class='bg-[var(--body-bg-color)] font-[var(--font-family, sans-serif)]'>
     <!-- Navigation -->
     <Navigation navItems={navItems} />
 
     <!-- Main Content -->
     <Main>
-      {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
       <slot />
+      {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
     </Main>
 
     <!-- Footer -->
