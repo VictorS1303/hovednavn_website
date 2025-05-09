@@ -37,13 +37,13 @@ const artistCardsData = [
 ---
 
 <div
-  class='container artist-cards-container flex flex-col items-center gap-4 w-full'
+  class='concert-cards-container flex flex-wrap justify-center w-screen'
   id='artist_cards_container'>
   {
     artistCardsData.map((artistCard, index) => (
       <a href={`/about/${index}`}>
         <Card
-          class='artist-card'
+          class='artist-card m-4'
           id={`artist-${index}`}
           src={`../src/images/about/about_cards/${artistCard.artistImage}.png`}
           isArtistCard={true}

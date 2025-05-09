@@ -51,20 +51,11 @@ const navItems = [
 ---
 
 <Layout title='Velkommen' navItems={navItems}>
-  <!-- <Hero src='../src/images/landing_page/hero/hero_bg.jpg' /> -->
-  <Section class='relative h-screen w-screen landing-hero' id='landing_hero'>
-    <header
-      class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
-      <h1
-        class='hero-heading-text-color tracking-wider text-[44px] md:text-8xl'>
-        Hovednavn
-      </h1>
-    </header>
-    <img
-      src='../../src/images/landing_page/hero/hero_bg.jpg'
-      class='w-full h-full object-cover absolute top-0 left-0'
-      alt='hero landing image'
+  <Section class={`h-screen relative`} id='music'>
+    <Hero
+      heroHeaderText='Hovednavn'
+      heroImageSrc='../src/images/landing_page/hero/hero_bg.jpg'
+      heroImageAlt='hero music image'
     />
-    <Overlay />
   </Section>
 </Layout>

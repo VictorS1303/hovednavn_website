@@ -36,11 +36,11 @@ const isHome = activePage === '/'
     <!-- Navigation -->
     <Navigation navItems={navItems} />
 
-    <!-- Main Content -->
-    <Main>
-      <slot />
-      {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
-    </Main>
+    <!-- Flexible Layout -->
+    <slot />
+
+    <!-- Page Intro Text -->
+    {!isHome ? <PageIntroText pageIntroText={pageIntroText} /> : ''}
 
     <!-- Footer -->
     {!isHome ? <MainFooter /> : <LandingPageFooter />}

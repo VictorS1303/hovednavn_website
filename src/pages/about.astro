@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import ScrollToTopBtn from '../components/ScrollToTopBtn.astro'
 import Hero from '../components/Hero.astro'
+import Main from '../components/Main.astro'
 import {Image} from '@astrojs/image/components'
 import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
@@ -35,10 +36,13 @@ const navItems = [
       heroImageAlt='hero about image'
     />
   </Section>
-  <PageIntroText
-    pageIntroText='Hej og velkommen til! Vi hedder Hovednavn og består af fem gutter, der holder af at spille musik sammen. Her på siden har du mulighed for at lære os bedre at kende - alt fra, hvordan Hovednavn blev til samt om os hver især personligt.'
-  />
 
-  <ArtistCardsContainer />
+  <Main>
+    <PageIntroText
+      pageIntroText='Hej og velkommen til! Vi hedder Hovednavn og består af fem gutter, der holder af at spille musik sammen. Her på siden har du mulighed for at lære os bedre at kende - alt fra, hvordan Hovednavn blev til samt om os hver især personligt.'
+    />
+
+    <ArtistCardsContainer />
+  </Main>
 </Layout>
 <ScrollToTopBtn />

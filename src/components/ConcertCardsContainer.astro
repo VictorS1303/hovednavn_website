@@ -29,10 +29,11 @@ const concertCardsData = [
 ]
 ---
 
-<div class="container concert-cards-container flex flex-wrap justify-center items-center gap-4 mx-auto w-screen">
+<div class='concert-cards-container flex flex-wrap justify-center w-screen'>
   {
     concertCardsData.map((concertCard) => (
       <Card
+        class='m-4'
         src={`../src/images/concert/concert_cards/${concertCard.concertImage}.jpg`}
         showOverlay={true}
         isConcertCard={true}

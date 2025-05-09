@@ -20,9 +20,10 @@ import ArtistCardContent from './ArtistCardContent.astro'
 {
   isArtistCard ? (
     <a href={`/artist/${artistName}`} class='block'>
-      {' '}
       {/* You can adjust the href as needed */}
-      <article class={`${className} relative h-[325px] w-fit`} id={id}>
+      <article
+        class={`${className} relative h-[325px] w-[300px] flex justify-center`}
+        id={id}>
         <img src={src} class='h-full w-full object-cover' />
         {showOverlay && <Overlay />}
 
