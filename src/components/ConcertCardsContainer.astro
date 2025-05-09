@@ -1,0 +1,45 @@
+---
+import Card from './Card.astro'
+
+const concertCardsData = [
+  {
+    concertDate: '5. maj',
+    concertLocation: 'Kayak Bar',
+    concertImage: 'concert_card_bg',
+    concertPrice: '100',
+  },
+  {
+    concertDate: '23. juni',
+    concertLocation: 'Pumpehuset',
+    concertImage: 'concert_card_bg',
+    concertPrice: '100',
+  },
+  {
+    concertDate: '26. juli',
+    concertLocation: 'Loppen',
+    concertImage: 'concert_card_bg',
+    concertPrice: '130',
+  },
+  {
+    concertDate: '30. august',
+    concertLocation: 'Amager Bio',
+    concertImage: 'concert_card_bg',
+    concertPrice: '130',
+  },
+]
+---
+
+<div class="container concert-cards-container flex flex-wrap justify-center items-center gap-4 mx-auto w-screen">
+  {
+    concertCardsData.map((concertCard) => (
+      <Card
+        src={`../src/images/concert/concert_cards/${concertCard.concertImage}.jpg`}
+        showOverlay={true}
+        isConcertCard={true}
+        concertDate={concertCard.concertDate}
+        concertLocation={concertCard.concertLocation}
+        concertPrice={concertCard.concertPrice}
+      />
+    ))
+  }
+</div>
