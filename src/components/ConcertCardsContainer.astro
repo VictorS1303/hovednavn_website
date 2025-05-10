@@ -1,32 +1,6 @@
 ---
+import {concertCardsData} from '../js/concert_maps_data.js'
 import Card from './Card.astro'
-
-const concertCardsData = [
-  {
-    concertDate: '5. maj',
-    concertLocation: 'Kayak Bar',
-    concertImage: 'concert_card_bg',
-    concertPrice: '100',
-  },
-  {
-    concertDate: '23. juni',
-    concertLocation: 'Pumpehuset',
-    concertImage: 'concert_card_bg',
-    concertPrice: '100',
-  },
-  {
-    concertDate: '26. juli',
-    concertLocation: 'Loppen',
-    concertImage: 'concert_card_bg',
-    concertPrice: '130',
-  },
-  {
-    concertDate: '30. august',
-    concertLocation: 'Amager Bio',
-    concertImage: 'concert_card_bg',
-    concertPrice: '130',
-  },
-]
 ---
 
 <div class='concert-cards-container flex flex-wrap justify-center w-screen'>
@@ -40,6 +14,7 @@ const concertCardsData = [
         concertDate={concertCard.concertDate}
         concertLocation={concertCard.concertLocation}
         concertPrice={concertCard.concertPrice}
+        concertLocationCoordinates={concertCard.concertLocationCoordinates}
       />
     ))
   }
