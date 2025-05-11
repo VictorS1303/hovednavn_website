@@ -10,6 +10,8 @@ import landingPageBgImage from '../../src/images/landing_page/hero/hero_bg.jpg'
 
 import Section from '../components/Section.astro'
 import Overlay from '../components/Overlay.astro'
+import ConcertRouteMapModal from '../components/ConcertRouteMapModal.astro'
+
 import PageIntroText from '../components/PageIntroText.astro'
 
 const navItems = [
@@ -29,18 +31,22 @@ const navItems = [
 ---
 
 <Layout navItems={navItems}>
-  <Section class={`h-screen relative`} id='concerts'>
+  <Section
+    class='h-screen relative flex items-center justify-center'
+    id='concerts'>
     <Hero
       heroHeaderText='Koncerter'
       heroImageSrc='../src/images/concert/hero/hero_bg.png'
       heroImageAlt='hero concert image'
     />
+    <ConcertRouteMapModal />
   </Section>
-  <Main>
+  <Main class='relative'>
     <PageIntroText
       pageIntroText='Vi tager naturligvis ud og spiller for jer allesammen - unge som gamle! Så find et sted nær jer, og så ses vi til en svingom eller to; for hvis der er en, vi helst vil optræde for, er det dig!'
     />
-    <ConcertCardsContainer />
+    <ConcertCardsContainer client:visible />
   </Main>
+
   <ScrollToTopBtn />
 </Layout>

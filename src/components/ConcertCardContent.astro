@@ -1,17 +1,16 @@
 ---
-const {concertDate, concertLocation, concertPrice} = Astro.props
+const {concertDate, concertLocation, concertPrice, concertId} = Astro.props
 ---
 
 <div
   class='container concert-card-content-container absolute top-0 left-0 flex flex-col justify-between px-3 py-4 z-[1000] h-full w-full text-white overflow-hidden'>
   <div
     class='flex flex-col justify-between container map-container absolute inset-0 z-50 h-full w-full translate-y-[100%] transition-translate duration-400 ease-in'>
-
     <!-- Map Placeholder -->
     <div
-        class="concert-map absolute h-full w-full"
-        data-coordinates='{concertLocationCoordinates.lat}, {concertLocationCoordinates.lng}'
-    ></div>
+      class='concert-map absolute h-full w-full'
+      data-coordinates='{concertLocationCoordinates.lat}, {concertLocationCoordinates.lng}'>
+    </div>
     <button
       class='btn close-map-btn grid self-end place-content-center h-[35px] w-[35px] z-[55] text-[var(--close-map-btn-text-color)] bg-white cursor-pointer transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
       id='close_map_btn'>
@@ -21,15 +20,15 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
     <div
       class='container map-control-container flex justify-between items-center z-[300] px-3 h-10 bg-white'
       id='map_control_container'>
-      <a
+      <button
+        class='btn show-road-btn text-[var(--map-control-btns-text-color)] text-xl cursor-pointer transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
+        data-concert-id='{concertId}'>
+        Vis vej
+      </button>
+      <button
         href='#'
-        class='btn show-road-btn text-[var(--map-control-btns-text-color)] text-xl transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
-        id='show_road_btn'>Vis vej</a
-      >
-      <a
-        href='#'
-        class='btn show-event-btn text-[var(--map-control-btns-text-color)] text-xl transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
-        id='show_event_btn'>Vis event</a
+        class='btn show-event-btn text-[var(--map-control-btns-text-color)] text-xl cursor-pointer transition-text duration-150 ease-in hover:text-[var(--secondary-text-color)]'
+        id='show_event_btn'>Vis event</button
       >
     </div>
   </div>
@@ -65,15 +64,21 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
 <script
   src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQlUrqkxhAPlFlgpWnoaWfR_7YhE-P84&callback=initMap'
   async
-  defer>
-></script>
+  defer></script>
 
 <script>
-  import {concertCardsData} from '../js/concert_maps_data.js'  
+  import {concertCardsData} from '../js/concert_maps_data.js'
+
   const showLocationBtns = document.querySelectorAll('.show-location-btn')
   const closeLocationBtns = document.querySelectorAll('.close-map-btn')
   const concertMap = document.querySelector('.concert-map')
+
   window.addEventListener('DOMContentLoaded', initMap)
+  const showRoadBtns = document.querySelectorAll('.show-road-btn')
+
+  showRoadBtns.forEach((showRoadBtn) =>
+    showRoadBtn.addEventListener('click', (e) => openMapModal(e)),
+  )
 
   showLocationBtns.forEach((showLocationBtn) => {
     showLocationBtn.addEventListener('click', (e) => showLocation(e))
@@ -105,30 +110,95 @@ const {concertDate, concertLocation, concertPrice} = Astro.props
 
   // Initialize Concert Maps
   function initMap() {
-  
-      const concertMaps = document.querySelectorAll('.concert-map'); // Select all map containers
-  
-      concertMaps.forEach((mapContainer, index) => {
-        const concertPosition = concertCardsData[index].concertLocationCoordinates
-        const options = {
-          zoom: 15,
-          center: concertPosition,
-          PointerEvent: false,
-          draggable: false,
-          disableDefaultUI: true,
-          mapTypeId: 'roadmap',
-        };
+    const concertMaps = document.querySelectorAll('.concert-map') // Select all map containers
 
-        // Initialize the map for the current container
-        const map = new google.maps.Map(mapContainer, options);
+    concertMaps.forEach((mapContainer, index) => {
+      const concertPosition = concertCardsData[index].concertLocationCoordinates
+      const options = {
+        zoom: 15,
+        center: concertPosition,
+        PointerEvent: false,
+        draggable: false,
+        disableDefaultUI: true,
+        mapTypeId: 'roadmap',
+      }
 
-        // Add a marker to the current map
-        new google.maps.Marker({
-          position: concertPosition,
-          draggable: false,
-          map: map,
-          icon: '../src/images/map_marker/map_marker.png',
-        });
-      });
-}
+      // Initialize the map for the current container
+      const map = new google.maps.Map(mapContainer, options)
+
+      // Add a marker to the current map
+      new google.maps.Marker({
+        position: concertPosition,
+        draggable: false,
+        map: map,
+        icon: '../src/images/map_marker/map_marker.png',
+      })
+    })
+  }
+
+  // Trigger Corresponding Map Dialog
+  function openMapModal(e) {
+    // Get the concert ID from the button's data attribute
+    const concertId = e.target.dataset.concertId
+
+    if (!concertId) {
+      console.error('concertId not found on target element')
+      return
+    }
+
+    // Find the corresponding concert data
+    const concertData = concertCardsData.find(
+      (data) => data.concertId === concertId,
+    )
+
+    if (!concertData) {
+      console.error(`Concert data for ID ${concertId} not found!`)
+      return
+    }
+
+    // Open the modal associated with this concert
+    const modal = document.getElementById(`modal-${concertId}`)
+
+    console.log(modal)
+
+    if (!modal) {
+      console.error(`Modal for concert ID ${concertId} not found!`)
+      return
+    }
+
+    modal.showModal() // Open the modal
+    console.log('Opening map modal for concert data:', concertData)
+
+    // Initialize the map for this concert
+    initMap(concertData)
+  }
+
+  // Initialize Concert Map for a Specific Concert
+  function initConcertMap(modal, coordinates) {
+    const mapContainer = modal.querySelector('.concert-map')
+
+    if (mapContainer) {
+      // Clear the previous map if it exists (in case the modal is reused)
+      mapContainer.innerHTML = ''
+
+      const options = {
+        zoom: 15,
+        center: coordinates,
+        draggable: false,
+        disableDefaultUI: true,
+        mapTypeId: 'roadmap',
+      }
+
+      // Initialize the map for the current modal with the specific coordinates
+      const map = new google.maps.Map(mapContainer, options)
+
+      // Add a marker to the map
+      new google.maps.Marker({
+        position: coordinates,
+        draggable: false,
+        map: map,
+        icon: '../src/images/map_marker/map_marker.png',
+      })
+    }
+  }
 </script>
