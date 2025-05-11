@@ -1,4 +1,6 @@
 ---
+import {concertCardsData} from '../js/concert_maps_data'
+
 const {
   class: className,
   id: id,
@@ -13,9 +15,19 @@ const {
   artistBandRole,
   concertLocationCoordinates,
 } = Astro.props
+
 import Overlay from './Overlay.astro'
 import ConcertCardContent from './ConcertCardContent.astro'
 import ArtistCardContent from './ArtistCardContent.astro'
+
+// Find the matching concert data based on date and location (or other properties)
+const matchingConcert = concertCardsData.find(
+  (concert) =>
+    concert.concertDate === concertDate &&
+    concert.concertLocation === concertLocation,
+)
+
+const concertId = matchingConcert?.concertId || null // Default to null if not found
 ---
 
 {
@@ -34,7 +46,6 @@ import ArtistCardContent from './ArtistCardContent.astro'
             concertDate={concertDate}
             concertLocation={concertLocation}
             concertLocationCoordinates={concertLocationCoordinates}
-            concertId={concertId}
           />
         )}
 
@@ -57,6 +68,7 @@ import ArtistCardContent from './ArtistCardContent.astro'
           concertDate={concertDate}
           concertLocation={concertLocation}
           concertPrice={concertPrice}
+          concertId={concertId}
         />
       )}
 

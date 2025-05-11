@@ -8,7 +8,7 @@ export const concertCardsData = [
         lat: 55.67552701830106,
         lng: 12.58672489575173,
       },
-      concertId: crypto.randomUUID(),
+      concertId: '1',
     },
     {
       concertDate: '23. juni',
@@ -19,7 +19,7 @@ export const concertCardsData = [
         lat: 55.67739435279951,
         lng: 12.565182724463128,
       },
-      concertId: crypto.randomUUID(),
+      concertId: '2',
     },
     {
       concertDate: '26. juli',
@@ -30,7 +30,7 @@ export const concertCardsData = [
         lat: 55.67389982358226,
         lng: 12.597148928165135,
       },
-      concertId: crypto.randomUUID(),
+      concertId: '3',
     },
     {
       concertDate: '30. august',
@@ -41,6 +41,8 @@ export const concertCardsData = [
         lat: 55.65415790187533,
         lng: 12.609199896636788,
       },
-      concertId: crypto.randomUUID(),
+      concertId: '4',
     },
 ]
+
+concertCardsData.map((concert) => console.log(concert.concertId))
