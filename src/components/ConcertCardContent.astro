@@ -80,11 +80,11 @@ const {
   const concertMap = document.querySelector('.concert-map')
 
   window.addEventListener('DOMContentLoaded', initMap)
-  const showRoadBtns = document.querySelectorAll('.show-road-btn')
+  // const showRoadBtns = document.querySelectorAll('.show-road-btn')
 
-  showRoadBtns.forEach((showRoadBtn) =>
-    showRoadBtn.addEventListener('click', showRoute),
-  )
+  // showRoadBtns.forEach((showRoadBtn) =>
+  //   showRoadBtn.addEventListener('click', showRoute),
+  // )
 
   showLocationBtns.forEach((showLocationBtn) => {
     showLocationBtn.addEventListener('click', (e) => showLocation(e))
@@ -142,44 +142,44 @@ const {
     })
   }
 
-  function showRoute(e) {
-    // Retrieve data associated with the button
-    const container = e.target.closest('.concert-card-content-container')
-    const concertLocationCoordinates =
-      container?.querySelector('.concert-map')?.dataset?.coordinates
+  // function showRoute(e) {
+  //   // Retrieve data associated with the button
+  //   const container = e.target.closest('.concert-card-content-container')
+  //   const concertLocationCoordinates =
+  //     container?.querySelector('.concert-map')?.dataset?.coordinates
 
-    console.log(concertLocationCoordinates)
+  //   console.log(concertLocationCoordinates)
 
-    if (!concertLocationCoordinates) {
-      console.error('Concert location coordinates not found!')
-      return
-    }
+  //   if (!concertLocationCoordinates) {
+  //     console.error('Concert location coordinates not found!')
+  //     return
+  //   }
 
-    // Split coordinates correctly
-    const [concertLat, concertLng] = concertLocationCoordinates.split(',')
-    console.log(concertLat, concertLng)
+  //   // Split coordinates correctly
+  //   const [concertLat, concertLng] = concertLocationCoordinates.split(',')
+  //   console.log(concertLat, concertLng)
 
-    // Check if geolocation is available in order to get user's current location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const userLat = position.coords.latitude
-          const userLng = position.coords.longitude
+  //   // Check if geolocation is available in order to get user's current location
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         const userLat = position.coords.latitude
+  //         const userLng = position.coords.longitude
 
-          // Construct the Google Maps URL for the route
-          const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${concertLat},${concertLng}`
-          console.log(mapsUrl, concertLat, concertLng)
+  //         // Construct the Google Maps URL for the route
+  //         const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${concertLat},${concertLng}`
+  //         console.log(mapsUrl, concertLat, concertLng)
 
-          // Open the URL in a new tab
-          window.open(mapsUrl, '_blank')
-        },
-        (error) => {
-          console.error('Error getting user location:', error)
-          alert('Unable to retrieve your location.')
-        },
-      )
-    }
-  }
+  //         // Open the URL in a new tab
+  //         window.open(mapsUrl, '_blank')
+  //       },
+  //       (error) => {
+  //         console.error('Error getting user location:', error)
+  //         alert('Unable to retrieve your location.')
+  //       },
+  //     )
+  //   }
+  // }
 
   // Trigger Corresponding Map Dialog
   // function openMapModal(concertId) {
