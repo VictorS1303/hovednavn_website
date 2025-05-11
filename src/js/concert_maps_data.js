@@ -4,6 +4,8 @@ export const concertCardsData = [
       concertLocation: 'Kayak Bar',
       concertImage: 'concert_card_bg',
       concertPrice: '100',
+      concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
+      concertTarget: "_blank",
       concertLocationCoordinates: {
         lat: 55.67552701830106,
         lng: 12.58672489575173,
@@ -15,6 +17,8 @@ export const concertCardsData = [
       concertLocation: 'Pumpehuset',
       concertImage: 'concert_card_bg',
       concertPrice: '100',
+      concertEvent: 'https://www.facebook.com/vschweitz',
+      concertTarget: "_blank",
       concertLocationCoordinates: {
         lat: 55.67739435279951,
         lng: 12.565182724463128,
@@ -26,6 +30,8 @@ export const concertCardsData = [
       concertLocation: 'Loppen',
       concertImage: 'concert_card_bg',
       concertPrice: '130',
+      concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
+      concertTarget: "_blank",
       concertLocationCoordinates: {
         lat: 55.67389982358226,
         lng: 12.597148928165135,
@@ -37,6 +43,8 @@ export const concertCardsData = [
       concertLocation: 'Amager Bio',
       concertImage: 'concert_card_bg',
       concertPrice: '130',
+      concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
+      concertTarget: "_blank",
       concertLocationCoordinates: {
         lat: 55.65415790187533,
         lng: 12.609199896636788,

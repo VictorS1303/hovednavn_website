@@ -1,6 +1,5 @@
 ---
 import {concertCardsData} from '../js/concert_maps_data'
-
 const {
   class: className,
   id: id,
@@ -13,21 +12,13 @@ const {
   isArtistCard,
   artistName,
   artistBandRole,
-  concertLocationCoordinates,
+  concertEvent,
+  concertTarget,
 } = Astro.props
 
 import Overlay from './Overlay.astro'
 import ConcertCardContent from './ConcertCardContent.astro'
 import ArtistCardContent from './ArtistCardContent.astro'
-
-// Find the matching concert data based on date and location (or other properties)
-const matchingConcert = concertCardsData.find(
-  (concert) =>
-    concert.concertDate === concertDate &&
-    concert.concertLocation === concertLocation,
-)
-
-const concertId = matchingConcert?.concertId || null // Default to null if not found
 ---
 
 {
@@ -40,21 +31,10 @@ const concertId = matchingConcert?.concertId || null // Default to null if not f
         <img src={src} class='h-full w-full object-cover' />
         {showOverlay && <Overlay />}
 
-        {/* Only show ConcertCardContent if isConcertCard is true */}
-        {isConcertCard && (
-          <ConcertCardContent
-            concertDate={concertDate}
-            concertLocation={concertLocation}
-            concertLocationCoordinates={concertLocationCoordinates}
-          />
-        )}
-
-        {isArtistCard && (
-          <ArtistCardContent
-            artistName={artistName}
-            artistBandRole={artistBandRole}
-          />
-        )}
+        <ArtistCardContent
+          artistName={artistName}
+          artistBandRole={artistBandRole}
+        />
       </article>
     </a>
   ) : (
@@ -62,22 +42,13 @@ const concertId = matchingConcert?.concertId || null // Default to null if not f
       <img src={src} class='h-full w-full object-cover' />
       {showOverlay && <Overlay />}
 
-      {/* Only show ConcertCardContent if isConcertCard is true */}
-      {isConcertCard && (
-        <ConcertCardContent
-          concertDate={concertDate}
-          concertLocation={concertLocation}
-          concertPrice={concertPrice}
-          concertId={concertId}
-        />
-      )}
-
-      {isArtistCard && (
-        <ArtistCardContent
-          artistName={artistName}
-          artistBandRole={artistBandRole}
-        />
-      )}
+      <ConcertCardContent
+        concertEvent={concertEvent}
+        concertTarget={concertTarget}
+        concertDate={concertDate}
+        concertLocation={concertLocation}
+        concertPrice={concertPrice}
+      />
     </article>
   )
 }
