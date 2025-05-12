@@ -9,7 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [image()],
   devToolbar:
   {
     enabled: false,
