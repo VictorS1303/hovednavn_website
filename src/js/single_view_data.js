@@ -1,0 +1,45 @@
+export const singleViewData = 
+[
+    {
+        id: 1,
+        title: "Samuel Himmelstrup",
+        name: "Samuel Himmelstrup",
+        age: "34 år",
+        about: "Mit navn er Samuel Himmelstrup, og jeg kommer oprindeligt fra Farum i Nordsjælland. Til dagligt arbejder jeg som udvikler, og ved siden af det er jeg forsanger i Hovednavn. Mit navn er Samuel Himmelstrup, og jeg kommer oprindeligt fra Farum i Nordsjælland. Til dagligt arbejder jeg som udvikler, og ved siden af det er jeg forsanger i Hovednavn. Mit navn er Samuel Himmelstrup, og jeg kommer oprindeligt fra Farum i Nordsjælland. Til dagligt arbejder jeg som udvikler, og ved siden af det er jeg forsanger i Hovednavn. Mit navn er Samuel Himmelstrup, og jeg kommer oprindeligt fra Farum i Nordsjælland. Til dagligt arbejder jeg som udvikler, og ved siden af det er jeg forsanger i Hovednavn. Mit navn er Samuel Himmelstrup, og jeg kommer oprindeligt fra Farum i Nordsjælland. Til dagligt arbejder jeg som udvikler, og ved siden af det er jeg forsanger i Hovednavn.",
+        image: "../src/images/about/about_cards/samuel_himmelstrup.png",
+        "backArrow": "/about"
+    },
+    {
+        id: 2,
+        title: "Mikkel Deleuran",
+        name: "Mikkel Deleuran",
+        age: "34 år",
+        about: "Jeg hedder Mikkel Deleuran, og jeg kommer fra Farum. Til dagligt arbejder jeg som pædagog, og derudover er det mig, der er bandets bassist.",
+        image: "../src/images/about/about_cards/mikkel_deleuran.png",
+    },
+    {
+        id: 3,
+        title: "Julian Falck",
+        name: "Julian Falck",
+        age: "40 år",
+        about: "Jeg hedder Julian Falck, og jeg kommer fra København. Til dagligt arbejder jeg som mekaniker, og ellers kører jeg motorcykel og spiller trommer i Hovednavn.",
+        image: "../src/images/about/about_cards/julian_falck.png",
+    },
+    {
+        id: 4,
+        title: "Lasse",
+        name: "Lasse",
+        age: "43",
+        about: "Jeg hedder Lasse, og jeg kommer fra Aarhus. Til dagligt er jeg eventkoordinator. Det er mig, der er organist i bandet.",
+        image: "../src/images/about/about_cards/lasse.png",
+    },
+    {
+        id: 5,
+        title: "Anders",
+        name: "Anders",
+        age: "39",
+        about: "Jeg hedder Anders, og jeg kommer fra Slagelse. Til dagligt er jeg folkeskolelærer. Jeg står for guitaren på vores numre.",
+        image: "../src/images/about/about_cards/anders.png",
+    },
+    
+]
