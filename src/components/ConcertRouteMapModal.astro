@@ -83,7 +83,7 @@ const {class: className, id, popover, concertId} = Astro.props
           origin: userLocation,
           destination: {
             lat: concertData.concertLocationCoordinates.lat,
-            lat: concertData.concertLocationCoordinates.lat,
+            lng: concertData.concertLocationCoordinates.lng,
           },
           travelMode: google.maps.TravelMode.DRIVING, // Changed to WALKING
         }

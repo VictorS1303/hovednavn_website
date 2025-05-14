@@ -95,7 +95,7 @@ const {
     closeLocationBtn.addEventListener('click', (e) => closeLocation(e))
   })
 
-  function showLocation(e) {
+  function showLocation(e: any) {
     const container = e.target.closest('.concert-card-content-container')
     const mapContainer = container?.querySelector('.map-container')
 
@@ -117,20 +117,19 @@ const {
 
   // Initialize Concert Maps
   function initMap() {
-    const concertMaps = document.querySelectorAll('.concert-map') // Select all map containers
+    const concertMaps = document.querySelectorAll('.concert-map')
 
     concertMaps.forEach((mapContainer, index) => {
       const concertPosition = concertCardsData[index].concertLocationCoordinates
       const options = {
         zoom: 15,
         center: concertPosition,
-        PointerEvent: false,
+        pointerEvents: false, // Note: Adjust property name if this is intentional
         draggable: false,
         disableDefaultUI: true,
         mapTypeId: 'roadmap',
       }
 
-      // Initialize the map for the current container
       const map = new google.maps.Map(mapContainer, options)
 
       // Add a marker to the current map
@@ -142,6 +141,7 @@ const {
       })
     })
   }
+  // // Initialize the map for the current container
 
   // function showRoute(e) {
   //   // Retrieve data associated with the button
