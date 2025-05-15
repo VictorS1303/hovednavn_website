@@ -29,7 +29,7 @@ const {class: className, id: id} = Astro.props
       class='container track-data-container-and-controls-container'
       id='track_data_and_controls_container'>
       <div
-        class='container track-data-container w-[200px] whitespace-nowrap'
+        class='track-data-container w-[200px] whitespace-nowrap'
         id='track_data_container'>
         <h3 class='track-title text-xl text-center' id='track_title'>
           Velkommen til Danmark
@@ -80,7 +80,7 @@ const {class: className, id: id} = Astro.props
     <i class='fas fa-list md:none'></i>
   </button>
   <div
-    class='container track-list-container absolute mx-auto z-[1000] backdrop-blur-2xl w-full h-[250px] rounded-b-2xl top-[500px] border-t-2 border-t-white transition-top duration-400 ease-in-out md:-top-[90px] md:w-[50%] md:right-0 md:h-[500px] md:flex md:flex-col md:justify-center md:border-t-none md:border-l-2 border-l-white'
+    class='track-list-container absolute mt-7 z-[1000] backdrop-blur-2xl w-full h-[275px] rounded-b-2xl top-[500px] border-t-2 border-t-white transition-top duration-400 ease-in-out md:-top-[100px] md:w-[50%] md:right-0 md:h-[500px] md:flex md:flex-col md:justify-center md:border-t-none md:border-l-2 border-l-white'
     id='track_list_container'>
     <h2 class='flex justify-between px-6 py-4'>
       <span class='text-white md:text-xl'>Track:</span>
@@ -233,8 +233,8 @@ const {class: className, id: id} = Astro.props
   function toggleTrackList() {
     trackListContainer.classList.contains('top-[500px]')
       ? (trackListContainer.classList.remove('top-[500px]'),
-        trackListContainer.classList.add('top-[110px]'))
-      : (trackListContainer.classList.remove('top-[110px]'),
+        trackListContainer.classList.add('top-[135px]'))
+      : (trackListContainer.classList.remove('top-[135px]'),
         trackListContainer.classList.add('top-[500px]'))
   }
 

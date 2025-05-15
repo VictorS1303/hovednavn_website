@@ -50,7 +50,9 @@ import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
       />
     </article>
   ) : (
-    <article class={`${className} relative h-[325px] w-[300px]`} id={id}>
+    <article
+      class={`${className} relative h-[325px] w-[300px] overflow-hidden`}
+      id={id}>
       <img src={src} class='h-full w-full object-cover' />
       {showOverlay && <Overlay />}
 
