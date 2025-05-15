@@ -11,7 +11,7 @@ const isSingleView = activePage.startsWith('/about/')
   !isSingleView && (
     <button
       class='btn mobile-menu-toggle-btn text-white z-[1000] fixed top-4 right-4
-  text-2xl cursor-pointer transition-right duration-400 ease-in md:hidden'
+  text-2xl z-[10000]cursor-pointer transition-right duration-400 ease-in md:hidden'
       id='mobile_menu_toggle_btn'>
       <i class='fas fa-bars' />
     </button>
@@ -23,11 +23,11 @@ const isSingleView = activePage.startsWith('/about/')
     <nav
       class={`${className} static top-0 z-[1000] pt-12 w-full px-6 transition-right duration-400 ease-in md:fixed md:backdrop-blur-none md:left-0 md:top-0 md:flex md:justify-center md:h-20 md:w-screen md:px-12 md:items-center`}
       id='main_nav'>
-      <div class='absolute bottom-8 left-[35px] md:static md:translate-x-0 md:bottom-auto md:left-auto'>
+      <div class='absolute top-4 left-4 md:static md:translate-x-0 md:bottom-auto md:left-auto'>
         {isSingleView ? (
           <a
             href='/about'
-            class='text-[var(--single-view-back-btn-text-color)] text-2xl absolute inset-0 z-[1000]'>
+            class='text-[var(--single-view-back-btn-text-color)] text-2xl static top-0 z-[1000]'>
             <i class='fas fa-arrow-left text-2xl cursor-pointer' />
           </a>
         ) : isHome ? (
