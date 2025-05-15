@@ -20,10 +20,10 @@ export const concertCardsData = [
       concertLocation: 'Pumpehuset',
       concertImage: 'concert_card_bg',
       concertPrice: '100',
-      isConcertCancelled: false,
-      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      isConcertCancelled: true,
+      concertCancelOverlayImage: '/images/logos/hovednavn_logo-svg.svg',
       concertCancelOverlayText: 'Koncert aflyst!',
-      cancelOverlayImage: 'src/images/logos/hovednavn_logo.png',
+      cancelOverlayImage: '/images/logos/hovednavn_logo.png',
       concertEvent: 'https://www.facebook.com/vschweitz',
       concertTarget: "_blank",
       concertLocationCoordinates: {
@@ -56,7 +56,7 @@ export const concertCardsData = [
       concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
       concertTarget: "_blank",
       isConcertCancelled: false,
-      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayImage: '/images/logos/hovednavn_logo-svg.svg',
       concertCancelOverlayText: 'Koncert aflyst!',
       concertLocationCoordinates: {
         lat: 55.65415790187533,
@@ -65,5 +65,3 @@ export const concertCardsData = [
       concertId: '4',
     },
 ]
-
-concertCardsData.map((concert) => console.log(concert.concertId))
