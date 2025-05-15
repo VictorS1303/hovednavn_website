@@ -1,5 +1,6 @@
 ---
 import {concertCardsData} from '../js/concert_maps_data'
+const googleMapsApiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY
 const {
   concertDate,
   concertLocation,
@@ -65,7 +66,7 @@ const {
 </div>
 
 <script
-  src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQlUrqkxhAPlFlgpWnoaWfR_7YhE-P84&callback=initMap'
+  src=`https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`
   async
   defer></script>
 
