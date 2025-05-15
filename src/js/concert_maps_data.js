@@ -20,7 +20,7 @@ export const concertCardsData = [
       concertLocation: 'Pumpehuset',
       concertImage: 'concert_card_bg',
       concertPrice: '100',
-      isConcertCancelled: true,
+      isConcertCancelled: false,
       concertCancelOverlayImage: '/images/logos/hovednavn_logo-svg.svg',
       concertCancelOverlayText: 'Koncert aflyst!',
       cancelOverlayImage: '/images/logos/hovednavn_logo.png',
