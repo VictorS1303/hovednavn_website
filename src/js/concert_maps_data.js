@@ -6,6 +6,9 @@ export const concertCardsData = [
       concertPrice: '100',
       concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
       concertTarget: "_blank",
+      isConcertCancelled: false,
+      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayText: 'Koncert aflyst!',
       concertLocationCoordinates: {
         lat: 55.67552701830106,
         lng: 12.58672489575173,
@@ -17,6 +20,10 @@ export const concertCardsData = [
       concertLocation: 'Pumpehuset',
       concertImage: 'concert_card_bg',
       concertPrice: '100',
+      isConcertCancelled: false,
+      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayText: 'Koncert aflyst!',
+      cancelOverlayImage: 'src/images/logos/hovednavn_logo.png',
       concertEvent: 'https://www.facebook.com/vschweitz',
       concertTarget: "_blank",
       concertLocationCoordinates: {
@@ -32,6 +39,9 @@ export const concertCardsData = [
       concertPrice: '130',
       concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
       concertTarget: "_blank",
+      isConcertCancelled: false,
+      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayText: 'Koncert aflyst!',
       concertLocationCoordinates: {
         lat: 55.67389982358226,
         lng: 12.597148928165135,
@@ -45,6 +55,9 @@ export const concertCardsData = [
       concertPrice: '130',
       concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
       concertTarget: "_blank",
+      isConcertCancelled: false,
+      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayText: 'Koncert aflyst!',
       concertLocationCoordinates: {
         lat: 55.65415790187533,
         lng: 12.609199896636788,

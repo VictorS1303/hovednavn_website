@@ -1,8 +1,27 @@
 ---
-const {class: className = '', id: id} = Astro.props
+const {
+  class: className = '',
+  id: id,
+  isConcertCancelled = false,
+  concertCancelOverlayText,
+} = Astro.props
 ---
 
-<div
-  class={`absolute inset-0 bg-black/50 pointer-events-none ${className}`}
-  id={id}>
-</div>
+{
+  isConcertCancelled ? (
+    <div
+      class={`absolute inset-0 ${
+        isConcertCancelled
+          ? `bg-red text-3xl flex items-center justify-center text-white font-bold ${className}`
+          : `bg-black text-xl pointer-events-none ${className}`
+      }`}
+      id={id}>
+      {concertCancelOverlayText}
+    </div>
+  ) : (
+    <div
+      class={`absolute inset-0 bg-black/50 pointer-events-none ${className}`}
+      id={id}
+    />
+  )
+}

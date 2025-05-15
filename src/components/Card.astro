@@ -6,6 +6,9 @@ const {
   src,
   showOverlay,
   isConcertCard,
+  isConcertCancelled = false,
+  concertCancelOverlayImage,
+  concertCancelOverlayText,
   concertDate,
   concertLocation,
   concertPrice,
@@ -19,6 +22,7 @@ const {
 import Overlay from './Overlay.astro'
 import ConcertCardContent from './ConcertCardContent.astro'
 import ArtistCardContent from './ArtistCardContent.astro'
+import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
 ---
 
 {
@@ -36,6 +40,15 @@ import ArtistCardContent from './ArtistCardContent.astro'
         />
       </article>
     </a>
+  ) : isConcertCancelled ? (
+    <article
+      class={`${className} relative h-[325px] w-[300px] flex items-center justify-center`}
+      id={id}>
+      <ConcertCancelOverlay
+        concertCancelOverlayText={concertCancelOverlayText}
+        concertCancelOverlayImage={concertCancelOverlayImage}
+      />
+    </article>
   ) : (
     <article class={`${className} relative h-[325px] w-[300px]`} id={id}>
       <img src={src} class='h-full w-full object-cover' />
