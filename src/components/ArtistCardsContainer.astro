@@ -45,7 +45,7 @@ const artistCardsData = [
         <Card
           class="artist-card m-4"
           id={artistCard.id} // Uses artistCard.id, not index
-          src={`../src/images/about/about_cards/${artistCard.artistImage}.png`}
+          src={`/images/about/about_cards/${artistCard.artistImage}.png`}
           isArtistCard={true}
           artistName={artistCard.artistName}
           artistBandRole={artistCard.artistBandRole}
@@ -53,18 +53,4 @@ const artistCardsData = [
       </a>
     ))
   }
-  <!-- {
-    artistCardsData.map((artistCard, index) => (
-      <a href={`/about/${index}`}>
-        <Card
-          class='artist-card m-4'
-          id={`${index}`}
-          src={`../src/images/about/about_cards/${artistCard.artistImage}.png`}
-          isArtistCard={true}
-          artistName={artistCard.artistName}
-          artistBandRole={artistCard.artistBandRole}
-        />
-      </a>
-    ))
-  } -->
 </div>

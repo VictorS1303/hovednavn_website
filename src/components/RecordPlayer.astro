@@ -134,8 +134,8 @@ const {class: className, id: id} = Astro.props
 
   function loadSong(song, shouldHighlight = true) {
     trackTitle.textContent = song.trackTitle
-    trackCoverImage.src = `../src/recordings/covers/${song.audioCover}_cover.jpg`
-    audio.src = `../src/recordings/audio/${song.audioTrack}.mp3`
+    trackCoverImage.src = `/recordings/covers/${song.audioCover}_cover.jpg`
+    audio.src = `/recordings/audio/${song.audioTrack}.mp3`
     startTime.textContent = song.startTime
     endTime.textContent = song.endTime
 
@@ -264,7 +264,7 @@ const {class: className, id: id} = Astro.props
     trackListItems.forEach((item, index) => {
       item.addEventListener('click', () => {
         if (index === songIndex && !audio.paused) {
-          return // Only skip if it's the same song and it's already playing
+          return
         }
         songIndex = index
         loadSong(trackData[songIndex])
@@ -272,7 +272,7 @@ const {class: className, id: id} = Astro.props
         rotateMobileTrackListIcon()
         updatePlayPauseIconState()
         trackCoverImage?.classList.add('spin')
-        toggleTrackList() // 👈 Close the tracklist after selection
+        toggleTrackList()
       })
     })
   }

@@ -40,7 +40,7 @@ export const concertCardsData = [
       concertEvent: 'https://www.facebook.com/profile.php?id=61574049239842',
       concertTarget: "_blank",
       isConcertCancelled: false,
-      concertCancelOverlayImage: 'src/images/logos/hovednavn_logo-svg.svg',
+      concertCancelOverlayImage: '/images/logos/hovednavn_logo-svg.svg',
       concertCancelOverlayText: 'Koncert aflyst!',
       concertLocationCoordinates: {
         lat: 55.67389982358226,

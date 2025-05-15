@@ -61,10 +61,11 @@ let timeUpdateInterval
 
 loadSong(trackData[songIndex])
 
-function loadSong(song: any) {
+function loadSong(song) {
   trackTitle.textContent = song.trackTitle
-  trackCoverImage.src = `../src/recordings/covers/${song.audioCover}_cover.jpg`
-  audio.src = `../src/recordings/audio/${song.audioTrack}.mp3`
+  // /recordings/audio/doev.mp3
+  trackCoverImage.src = `/recordings/covers/${song.audioCover}_cover.jpg`
+  audio.src = `/recordings/audio/${song.audioTrack}.mp3`
   startTime.textContent = song.startTime
   endTime.textContent = song.endTime
 
