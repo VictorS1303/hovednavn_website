@@ -40,15 +40,6 @@ const isSingleView = activePage.startsWith('/about/')
     <!-- Flexible Layout -->
     <slot />
 
-    <!-- Page Intro Text -->
-    {
-      !isHome && !isSingleView ? (
-        <PageIntroText pageIntroText={pageIntroText} />
-      ) : (
-        ''
-      )
-    }
-
     <!-- Footer -->
     {
       !isHome && !isSingleView ? (

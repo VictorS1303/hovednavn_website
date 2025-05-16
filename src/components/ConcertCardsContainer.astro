@@ -3,7 +3,8 @@ import {concertCardsData} from '../js/concert_maps_data.js'
 import Card from './Card.astro'
 ---
 
-<div class='concert-cards-container flex flex-wrap justify-center w-screen'>
+<div
+  class='concert-cards-container flex flex-wrap justify-center w-screen mx-12'>
   {
     concertCardsData.map((concertCard) => (
       <Card
