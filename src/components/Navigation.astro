@@ -1,8 +1,17 @@
 ---
-const {class: className, id: id, currentPage: currentPageProp, navItems = []} = Astro.props;
+import Logo from "../components/Logo.astro"
+
+const {
+  class: className,
+  id: id,
+  currentPage: currentPageProp,
+  isSingleView,
+  navItems = [],
+} = Astro.props
+
 const currentPage = new URL(Astro.request.url).pathname
-const isHome = currentPage === '/'
-console.log(currentPage);
+const isHome = currentPage === "/"
+console.log(currentPage)
 ---
 
 <button
@@ -12,37 +21,43 @@ console.log(currentPage);
 </button>
 
 <nav
-  class={`${className} backdrop-blur-2xl fixed top-0 z-[1000] h-screen w-[250px] -right-[250px] px-6 text-center shadow-md transition-right duration-400 ease-in md:fixed md:backdrop-blur-none md:left-0 md:flex md:h-20 md:w-screen md:px-12 md:justify-between md:items-center`}
+  class={`${className} fixed top-0 z-[1000] pt-12 w-full px-6 transition-right duration-400 ease-in md:justify-center md:h-20 md:w-screen md:px-12 md:items-center ${isSingleView ? "" : "h-full w-[250px] -right-[250px]"}`}
   id="main_nav">
-  <div
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:bottom-auto md:left-auto">
-    {
-      isHome ? (
-        <a href="/">
-          <img
-            src="../../src/images/logos/hovednavn_logo.png"
-            class="h-12 w-auto"
-            alt="Logo"
-          />
+  <!-- Back arrow if in single view -->
+  {
+    isSingleView && (
+      <div class="absolute top-4 left-4 md:static">
+        <a href="/about" class="text-white text-2xl">
+          <i class="fas fa-arrow-left" />
         </a>
-      ) : (
-        <img
-          src="../../src/images/logos/hovednavn_logo.png"
-          class="h-12 w-auto"
-          alt="Logo"
-        />
-      )
-    }
-  </div>
+      </div>
+    )
+  }
 
+  <!-- Logo if not in single view -->
+  {
+    !isSingleView && (
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+        {isHome ? (
+          <Logo src="/images/logos/hovednavn_logo.png" />
+        ) : (
+          <a href="/">
+            <Logo src="/images/logos/hovednavn_logo.png" />
+          </a>
+        )}
+      </div>
+    )
+  }
+
+  <!-- Nav Links -->
   <ul
-    class="primary-font flex flex-col items-center justify-center gap-8 h-full uppercase text-xl text-white md:flex-row md:static md:h-auto md:ml-auto md:gap-8">
+    class="primary-font flex flex-col h-full items-center justify-center gap-8 uppercase text-xl text-white shadow-none md:flex-row md:ml-auto md:gap-8">
     {
-      navItems.map((navItem: any) => (
+      navItems.map((navItem) => (
         <li class="text-2xl font-bold">
           <a
             href={navItem.href}
-            class={`${navItem.href === currentPage ? "text-[var(--secondary-text-color)] pointer-events-none" : "hover:text-[var(--secondary-text-color)] transition-text ease-in duration-150"}`}>
+            class={`${navItem.href === activePage ? "text-[var(--secondary-text-color)] pointer-events-none" : "hover:text-[var(--secondary-text-color)] transition-text ease-in duration-150"}`}>
             {navItem.text}
           </a>
         </li>
@@ -52,22 +67,22 @@ console.log(currentPage);
 </nav>
 
 <script>
-  const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn');
-  const mainNav = document.querySelector('#main_nav');
+  const mobileMenuToggleBtn = document.querySelector("#mobile_menu_toggle_btn")
+  const mainNav = document.querySelector("#main_nav")
 
-  mobileMenuToggleBtn?.addEventListener('click', toggleMobileMenu);
+  mobileMenuToggleBtn?.addEventListener("click", toggleMobileMenu)
 
   function toggleMobileMenu() {
-    mobileMenuToggleBtn?.classList.toggle('right-[270px]');
-    mainNav?.classList.toggle('right-0');
-    updateMobileMenuButtonIcon();
+    mobileMenuToggleBtn?.classList.toggle("right-[270px]")
+    mainNav?.classList.toggle("right-0")
+    updateMobileMenuButtonIcon()
   }
 
   function updateMobileMenuButtonIcon() {
-    const icon = mobileMenuToggleBtn?.querySelector('i')
+    const icon = mobileMenuToggleBtn?.querySelector("i")
 
-    icon?.classList.contains('fa-bars')
-        ? (icon.classList.remove('fa-bars'), icon.classList.add('fa-times'))
-        : (icon?.classList.add('fa-bars'), icon?.classList.remove('fa-times'))
+    icon?.classList.contains("fa-bars")
+      ? (icon.classList.remove("fa-bars"), icon.classList.add("fa-times"))
+      : (icon?.classList.add("fa-bars"), icon?.classList.remove("fa-times"))
   }
 </script>
