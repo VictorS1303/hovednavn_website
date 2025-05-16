@@ -1,4 +1,6 @@
 ---
+import {ClientRouter} from 'astro:transitions'
+
 const {
   title,
   navItems = [],
@@ -32,8 +34,11 @@ const isSingleView = activePage.startsWith('/about/')
       src='https://kit.fontawesome.com/2a447b40ae.js'
       crossorigin='anonymous'></script>
     <title>{title}</title>
+    <ClientRouter />
   </head>
-  <body class='bg-[var(--body-bg-color)] font-[var(--font-family, sans-serif)]'>
+  <body
+    class='bg-[var(--body-bg-color)] font-[var(--font-family, sans-serif)]'
+    :view-transition>
     <!-- Navigation -->
     <Navigation navItems={navItems} isSingleView={isSingleView} />
 
