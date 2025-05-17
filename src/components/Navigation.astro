@@ -93,6 +93,8 @@ const isSingleView = activePage.startsWith('/about/')
 }
 
 <script>
+  import {gsap} from 'gsap'
+
   const mobileMenuToggleBtn = document.querySelector('#mobile_menu_toggle_btn')
   const mainNav = document.querySelector('#main_nav')
 
@@ -115,4 +117,18 @@ const isSingleView = activePage.startsWith('/about/')
       icon?.classList.remove('fa-times')
     }
   }
+
+  // GSAP
+  gsap.from('nav .logo', {
+    y: -200,
+    duration: 1,
+  })
+
+  gsap.from('nav ul li', {
+    y: -200,
+    duration: 1,
+    stagger: 0.2,
+    delay: 0.5,
+    ease: 'power2.out',
+  })
 </script>
