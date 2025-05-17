@@ -31,6 +31,7 @@ const {
 
 <script>
   import {gsap} from 'gsap'
+  let mm = gsap.matchMedia()
 
   function heroTitleAnimation(heroHeading, duration, delay) {
     const heroTitle = document.querySelector(heroHeading)
@@ -59,11 +60,19 @@ const {
     })
   }
 
-  function overlayAnimation(duration, delay) {
+  function overlayAnimation(duration: number, delay: number) {
+    delay = 0.6
+
     gsap.fromTo(
       '.hero-overlay',
-      {opacity: 1, backgroundColor: 'black'},
-      {opacity: 0.6, duration: duration, delay: delay},
+      {
+        opacity: 1,
+      },
+      {
+        opacity: 0.7,
+        duration: duration,
+        delay: delay,
+      },
     )
   }
 
