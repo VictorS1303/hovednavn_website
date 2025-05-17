@@ -33,18 +33,12 @@ const navItems = [
   {
     href: '/about',
     text: 'Om',
-    href: '/about',
-    text: 'Om',
   },
   {
     href: '/music',
     text: 'Musik',
-    href: '/music',
-    text: 'Musik',
   },
   {
-    href: '/concerts',
-    text: 'Koncerter',
     href: '/concerts',
     text: 'Koncerter',
   },
@@ -58,33 +52,5 @@ const navItems = [
       heroImageSrc='/images/landing_page/hero/hero_bg.jpg'
       heroImageAlt='hero music image'
     />
-    <Layout>
-      <Navigation navItems={navItems} />
-      <Section
-        class='relative h-full w-full landing-hero overflow-clip'
-        id='landing_hero'>
-        <header
-          class='absolute top-[50%] left-[50%] -translate-[50%] z-100 uppercase'>
-          <h1
-            class='hero-heading-text-color tracking-wider text-[44px] md:text-8xl'>
-            Hovednavn
-          </h1>
-        </header>
-        <img
-          src='../../src/images/landing_page/hero/hero_bg.jpg'
-          class='w-full h-full object-cover absolute top-0 left-0'
-          alt='hero landing image'
-        />
-        <Overlay />
-        <LandingPageFooter>
-          <SocialIconsContainer
-            list={iconLinks}
-            class='absolute bottom-6 left-[50%] -translate-x-[50%]'
-            color={iconLinks[0].color}
-            hoverColor={iconLinks[0].hoverColor}
-          />
-        </LandingPageFooter>
-      </Section>
-    </Layout>
-  </Section></Layout
->
+  </Section>
+</Layout>
