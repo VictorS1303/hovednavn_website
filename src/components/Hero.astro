@@ -60,7 +60,11 @@ const {
   }
 
   function overlayAnimation(duration, delay) {
-    gsap.fromTo('.hero-overlay', {opacity: 1}, {opacity: 0.7, duration, delay})
+    gsap.fromTo(
+      '.hero-overlay',
+      {opacity: 1, backgroundColor: 'black'},
+      {opacity: 0.6, duration: duration, delay: delay},
+    )
   }
 
   function enableScrollOnAnimationEnd(delay, duration) {

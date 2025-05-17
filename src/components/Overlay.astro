@@ -13,19 +13,15 @@ const {
       class={`absolute inset-0 ${
         isConcertCancelled
           ? `bg-red text-3xl flex items-center justify-center text-white font-bold ${className}`
-          : `bg-black text-xl pointer-events-none ${className}`
+          : `text-xl pointer-events-none ${className}`
       }`}
       id={id}>
       {concertCancelOverlayText}
     </div>
   ) : (
     <div
-      class={`absolute inset-0 bg-black pointer-events-none ${className}`}
+      class={`absolute inset-0 bg-black/50 pointer-events-none ${className}`}
       id={id}
     />
   )
 }
-
-<script>
-  import {gsap} from 'gsap'
-</script>
