@@ -8,15 +8,15 @@ const {
 ---
 
 <details
-  class='overflow-hidden bg-[var(--timeline-card-bg-color)] min-h-fit w-full px-6 py-4 text-md shadow-md rounded-lg'>
+  class='overflow-hidden bg-[var(--timeline-card-bg-color)] w-[275px] md:w-[500px] px-6 py-4 text-md shadow-md rounded-lg'>
   <summary
-    class='timeline-card-header flex items-center justify-between gap-4 cursor-pointer text-xl text-[var(--timeline-card-color)] font-bold'>
+    class='timeline-card-header flex items-center justify-between gap-4 cursor-pointer text-xl text-white font-bold'>
     {timelineCardTitle}
     <i class='fas fa-chevron-down peer-open:rotate-180'></i>
   </summary>
 
   <p
-    class='timeline-card-description-text text-xl leading-snug tracking-wide w-[35ch] mt-6 text-[var(--timeline-card-color)] border-t-2 border-white pt-4 peer-hidden'>
+    class='timeline-card-description-text text-base text-wrap md:text-lg lg:text-xl leading-snug tracking-wide mt-6 text-white border-t-2 border-white pt-4 peer-hidden'>
     {timelineCardDescriptionText}
   </p>
 </details>
@@ -39,3 +39,24 @@ const {
 
   /* Initial state of the paragraph (hidden) */
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select all details elements
+    const detailsElements = document.querySelectorAll('details')
+
+    // Add event listeners to each details element
+    detailsElements.forEach((details) => {
+      details.addEventListener('toggle', () => {
+        // If the current details element is open, close all others
+        if (details.open) {
+          detailsElements.forEach((detailElement) => {
+            if (detailElement !== details && detailElement.open) {
+              detailElement.open = false
+            }
+          })
+        }
+      })
+    })
+  })
+</script>

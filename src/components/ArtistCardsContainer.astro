@@ -1,5 +1,6 @@
 ---
 import Card from './Card.astro'
+import SectionHeader from './SectionHeader.astro'
 const {class: className, id: id} = Astro.props
 
 const artistCardsData = [
@@ -36,21 +37,24 @@ const artistCardsData = [
 ]
 ---
 
-<div
-  class='concert-cards-container flex flex-wrap justify-center'
-  id='artist_cards_container'>
-  {
-    artistCardsData.map((artistCard, index) => (
-      <a href={`/about/${artistCard.id}`}>
-        <Card
-          class="artist-card m-4"
-          id={artistCard.id} // Uses artistCard.id, not index
-          src={`/images/about/about_cards/${artistCard.artistImage}.png`}
-          isArtistCard={true}
-          artistName={artistCard.artistName}
-          artistBandRole={artistCard.artistBandRole}
-        />
-      </a>
-    ))
-  }
+<div class="flex flex-col mt-16">
+  <SectionHeader sectionHeaderText="Hvem består vi af?" />
+  <div
+    class='concert-cards-container flex flex-wrap justify-center'
+    id='artist_cards_container'>
+    {
+      artistCardsData.map((artistCard, index) => (
+        <a href={`/about/${artistCard.id}`}>
+          <Card
+            class="artist-card m-4"
+            id={artistCard.id} // Uses artistCard.id, not index
+            src={`/images/about/about_cards/${artistCard.artistImage}.png`}
+            isArtistCard={true}
+            artistName={artistCard.artistName}
+            artistBandRole={artistCard.artistBandRole}
+          />
+        </a>
+      ))
+    }
+  </div>
 </div>
