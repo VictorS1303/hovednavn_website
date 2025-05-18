@@ -1,4 +1,5 @@
 ---
+const {showOverlay} = Astro.props
 import {concertCardsData} from '../js/concert_maps_data.js'
 import Card from './Card.astro'
 ---
@@ -9,8 +10,8 @@ import Card from './Card.astro'
       <Card
         class='m-4'
         src={`/images/concert/concert_cards/${concertCard.concertImage}.jpg`}
-        showOverlay={true}
         isConcertCard={true}
+        showOverlay={showOverlay}
         concertDate={concertCard.concertDate}
         concertLocation={concertCard.concertLocation}
         concertPrice={concertCard.concertPrice}

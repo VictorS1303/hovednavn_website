@@ -1,10 +1,13 @@
 ---
-import {concertCardsData} from '../js/concert_maps_data'
+import Overlay from './Overlay.astro'
+import ConcertCardContent from './ConcertCardContent.astro'
+import ArtistCardContent from './ArtistCardContent.astro'
+import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
+
 const {
   class: className,
   id: id,
   src,
-  showOverlay,
   isConcertCard,
   isConcertCancelled = false,
   concertCancelOverlayImage,
@@ -19,19 +22,17 @@ const {
   concertTarget,
 } = Astro.props
 
-import Overlay from './Overlay.astro'
-import ConcertCardContent from './ConcertCardContent.astro'
-import ArtistCardContent from './ArtistCardContent.astro'
-import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
+const showOverlay = true
 ---
 
 {
   isArtistCard ? (
     <a href={`/about/${id}`}>
       <article
-        class={`${className} relative h-[325px] w-[300px] flex justify-center`}
+        class={`${className} paragraph-font relative h-[325px] w-[300px] flex justify-center`}
         id={id}>
         <img src={src} class='h-full w-full object-cover' />
+
         {showOverlay && <Overlay />}
 
         <ArtistCardContent
@@ -49,7 +50,7 @@ import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
         concertCancelOverlayImage={concertCancelOverlayImage}
       />
     </article>
-  ) : (
+  ) : isConcertCard ? (
     <article
       class={`${className} relative h-[325px] w-[300px] overflow-hidden`}
       id={id}>
@@ -64,5 +65,5 @@ import ConcertCancelOverlay from './ConcertCancelOverlay.astro'
         concertPrice={concertPrice}
       />
     </article>
-  )
+  ) : null
 }

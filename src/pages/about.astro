@@ -36,15 +36,12 @@ const navItems = [
     id='concerts'>
     <Hero
       heroHeaderText='Om'
-      heroImageSrc='/images/concert/hero/hero_bg.png'
+      heroImageSrc='/images/about/hero/about_hero_bg.jpg'
       heroImageAlt='hero concert image'
     />
   </Section>
   <Main>
-    <SectionHeader
-      class='-mb-12'
-      sectionHeaderText='Velkommen til Hovednavn'
-    />
+    <SectionHeader class='-mb-12' sectionHeaderText='Velkommen til Hovednavn' />
 
     <PageIntroText
       pageIntroText='Hej og velkommen til! Vi hedder Hovednavn og består af fem gutter, der holder af at spille musik sammen. Her på siden har du mulighed for at lære os bedre at kende - alt fra, hvordan Hovednavn blev til samt om os hver især personligt.'
@@ -52,7 +49,7 @@ const navItems = [
 
     <TimelineContainer />
 
-    <ArtistCardsContainer />
+    <ArtistCardsContainer showOverlay={true} />
   </Main>
 </Layout>
 

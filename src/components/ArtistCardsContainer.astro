@@ -1,7 +1,7 @@
 ---
 import Card from './Card.astro'
 import SectionHeader from './SectionHeader.astro'
-const {class: className, id: id} = Astro.props
+const {class: className, id: id, showOverlay} = Astro.props
 
 const artistCardsData = [
   {
@@ -50,6 +50,7 @@ const artistCardsData = [
             id={artistCard.id} // Uses artistCard.id, not index
             src={`/images/about/about_cards/${artistCard.artistImage}.png`}
             isArtistCard={true}
+            showOverlay={showOverlay}
             artistName={artistCard.artistName}
             artistBandRole={artistCard.artistBandRole}
           />
