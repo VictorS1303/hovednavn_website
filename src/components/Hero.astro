@@ -23,7 +23,10 @@ const {
   <img
     src={heroImageSrc}
     alt={heroImageAlt}
+    height='100%'
+    width='100%'
     class='w-full h-screen object-cover absolute top-0 left-0'
+    loading='lazy'
   />
 
   <Overlay class='bg-black/100 hero-overlay' />
@@ -51,7 +54,7 @@ const {
 
     // Animate each span
     gsap.from(`${heroHeading} span`, {
-      y: -50,
+      transform: -50,
       opacity: 0,
       duration: duration,
       ease: 'power2.out',

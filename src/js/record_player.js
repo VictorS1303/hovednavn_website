@@ -64,7 +64,7 @@ loadSong(trackData[songIndex])
 function loadSong(song) {
   trackTitle.textContent = song.trackTitle
   // /recordings/audio/doev.mp3
-  trackCoverImage.src = `/recordings/covers/${song.audioCover}_cover.jpg`
+  trackCoverImage.src = `/recordings/covers/doev.webp`
   audio.src = `/recordings/audio/${song.audioTrack}.mp3`
   startTime.textContent = song.startTime
   endTime.textContent = song.endTime

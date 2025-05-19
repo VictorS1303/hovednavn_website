@@ -31,7 +31,11 @@ const showOverlay = true
       <article
         class={`${className} paragraph-font relative h-[325px] w-[300px] flex justify-center`}
         id={id}>
-        <img src={src} class='h-full w-full object-cover' />
+        <img
+          src={src}
+          class='h-full w-full object-cover'
+          alt='artist card image'
+        />
 
         {showOverlay && <Overlay />}
 
@@ -54,7 +58,11 @@ const showOverlay = true
     <article
       class={`${className} relative h-[325px] w-[300px] overflow-hidden`}
       id={id}>
-      <img src={src} class='h-full w-full object-cover' />
+      <img
+        src={src}
+        class='h-full w-full object-cover'
+        alt='concert card image'
+      />
       {showOverlay && <Overlay />}
 
       <ConcertCardContent

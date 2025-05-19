@@ -9,7 +9,8 @@ const {class: className, id, popover, concertId} = Astro.props
   <!-- Close Button Positioned Above the Map -->
   <button
     class='absolute top-0 right-0 z-[10000] grid h-[35px] w-[35px] place-content-center bg-white text-[var(--close-map-btn-text-color)] transition-all duration-150 ease-in hover:text-[var(--secondary-text-color)] cursor-pointer'
-    id='close_route_map_btn'>
+    id='close_route_map_btn'
+    aria-label='close route'>
     <i class='fas fa-times text-2xl'></i>
   </button>
 
