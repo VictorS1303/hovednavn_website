@@ -23,7 +23,6 @@ export const concertCardsData = [
       isConcertCancelled: false,
       concertCancelOverlayImage: '/images/logos/hovednavn_logo-svg.svg',
       concertCancelOverlayText: 'Koncert aflyst!',
-      cancelOverlayImage: '/images/logos/hovednavn_logo.png',
       concertEvent: 'https://www.facebook.com/vschweitz',
       concertTarget: "_blank",
       concertLocationCoordinates: {

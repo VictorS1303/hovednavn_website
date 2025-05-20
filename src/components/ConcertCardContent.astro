@@ -114,31 +114,25 @@ const {
     const concertMaps = document.querySelectorAll('.concert-map')
 
     concertMaps.forEach((mapContainer, index) => {
-      if (!mapContainer.dataset.mapInitialized) {
-        const concertPosition =
-          concertCardsData[index].concertLocationCoordinates
-        const options = {
-          zoom: 15,
-          center: concertPosition,
-          pointerEvents: false,
-          draggable: false,
-          disableDefaultUI: true,
-          mapTypeId: 'roadmap',
-        }
-
-        const map = new google.maps.Map(mapContainer, options)
-
-        // Add a marker to the current map
-        new google.maps.Marker({
-          position: concertPosition,
-          draggable: false,
-          map: map,
-          icon: '/images/map_marker/map_marker.png',
-        })
-
-        // Mark this map as initialized to avoid duplicate rendering
-        mapContainer.dataset.mapInitialized = 'true'
+      const concertPosition = concertCardsData[index].concertLocationCoordinates
+      const options = {
+        zoom: 15,
+        center: concertPosition,
+        pointerEvents: false,
+        draggable: false,
+        disableDefaultUI: true,
+        mapTypeId: 'roadmap',
       }
+
+      const map = new google.maps.Map(mapContainer, options)
+
+      // Add a marker to the current map
+      new google.maps.Marker({
+        position: concertPosition,
+        draggable: false,
+        map: map,
+        icon: '/images/map_marker/map_marker.webp',
+      })
     })
   }
 </script>
